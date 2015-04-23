@@ -1,11 +1,46 @@
-body {
-    font-family: verdana, arial, sans-serif;
-    background-color: #4797D6;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-// A wrapper to contain the main content of the webpage.
+html {
+    background: url('../img/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: verdana, arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* A wrapper to contain the main content of the webpage. */
 #wrapper {
     width: 1200px;
     margin: 0 auto;
+    padding: 0;
+    position: relative;
+}
+
+#header {
+    width: 100%;
+    background-color: red; /* for testing */
+    height: 80px;
+}
+
+#menu {
+    width: 100%;
+    height: 30px;
+    background-color: yellow; /* for testing */
+}
+
+#content {
+    width: 100%;
+    background-color: green;
+    height: 1500px;
 }
