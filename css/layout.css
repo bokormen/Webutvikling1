@@ -1,0 +1,11 @@
+body {
+    font-family: verdana, arial, sans-serif;
+    background-color: #4797D6;
+    text-align: center;
+}
+
+// A wrapper to contain the main content of the webpage.
+#wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
