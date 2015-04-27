@@ -46,3 +46,10 @@ body {
     background-color: green; /* for testing */
     height: 1500px; /* Bare for å teste scrollinga, endre om du vil */
 }
+
+/* The footer div, bottom of web page */
+#footer {
+    width: 100%;
+    background-color: blue; /* for testing */
+    height: 200px; /* Bare å endre */
+}
