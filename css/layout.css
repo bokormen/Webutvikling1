@@ -41,9 +41,9 @@ body {
 	background-color: orange; /* for testing */
 	/* Slightly rounded corners at the top of the web page */
 	/* dersom dette skaper problemer for iframen så fjerner du det */
-	-webkit-border-radius: 7px 7px 0px 0px;
-	-moz-border-radius: 7px 7px 0px 0px;
-	border-radius: 7px 7px 0px 0px;
+	-webkit-border-radius: 7px 7px 0 0;
+	-moz-border-radius: 7px 7px 0 0;
+	border-radius: 7px 7px 0 0;
 }
 
 /*	The main div for displaying content */
@@ -60,9 +60,9 @@ body {
 	background-color: orange; /* for testing */
 	height: 150px; /* Bare å endre */
 	/* Slightly rounded corners at the bottom of the web page */
-	-webkit-border-radius: 0px 0px 7px 7px;
-	-moz-border-radius: 0px 0px 7px 7px;
-	border-radius: 0px 0px 7px 7px;
+	-webkit-border-radius: 0 0 7px 7px;
+	-moz-border-radius: 0 0 7px 7px;
+	border-radius: 0 0 7px 7px;
 	margin-bottom: 10px;
 }
 
