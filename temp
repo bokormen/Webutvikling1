@@ -1,0 +1,48 @@
+/* Setting margin and padding to 0 so browsers dont add
+   other values by themselves and layout gets wrong */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Setting background picture to not move when wep-page scrolls */
+html {
+	background: url('../img/background.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* Denne endrer du bare om du vil ha andre fonts Øyvind */
+body {
+	font-family: verdana, arial, sans-serif;
+}
+
+/* A wrapper to contain the main content of the webpage. */
+#wrapper {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* A header-div to stay inside the wrapper, hugging the top of the web-page */
+#header {
+	width: 100%;
+	background-color: red; /* for testing */
+	height: 80px;
+}
+
+/* A menu-div that is to contain the menu iframe */
+#menu {
+	width: 100%;
+	height: 30px; /* denne justerer du selv øyvind */
+	background-color: yellow; /* for testing */
+}
+
+/* The main div for displaying content */
+#content {
+	width: 100%;
+	background-color: green; /* for testing */
+	height: 1500px; /* Bare for å teste scrollinga, endre om du vil */
+}
