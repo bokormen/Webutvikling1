@@ -9,21 +9,16 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    padding: 0;
-    margin: 0;
 }
 
 body {
     font-family: verdana, arial, sans-serif;
-    padding: 0;
-    margin: 0;
 }
 
 /* A wrapper to contain the main content of the webpage. */
 #wrapper {
     width: 1200px;
     margin: 0 auto;
-    padding: 0;
     position: relative;
 }
 
