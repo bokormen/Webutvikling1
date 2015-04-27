@@ -73,3 +73,7 @@ body {
 	border: none;
 	overflow: hidden; /* no scrolling, not reliable */
 }
+
+img.logo {
+	border: none;
+}
