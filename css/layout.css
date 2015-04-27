@@ -5,7 +5,7 @@
 	padding: 0;
 }
 
-/* Setting background picture to not move when wep-page scrolls */
+/* Setting background picture to not move when/ if web-page scrolls */
 html {
 	background: url('../img/background.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -21,35 +21,54 @@ body {
 
 /*	A wrapper to contain the main content of the webpage. */
 #wrapper {
-	width: 1200px;
-	margin: 0 auto;
+	width: 1200px; /* fixed width, 1200 pixels should fit most monitors today */
+	margin: 0 auto; /* center alignment */
 	position: relative;
 }
 
-/*	A header-div to stay inside the wrapper, hugging the top of the web-page */
+/*	A header-div to stay inside the wrapper */
 #header {
 	width: 100%;
-	background-color: red; /* for testing */
-	height: 80px;
+	padding-top: 3px; /* just to put some space before the logo */
+	background-color: transparent; /* to show the background picture behind the logo */
+	height: 130px;
 }
 
 /*	A menu-div that is to contain the menu iframe */
 #menu {
 	width: 100%;
 	height: 30px; /* denne justerer du selv øyvind */
-	background-color: yellow; /* for testing */
+	background-color: orange; /* for testing */
+	/* Slightly rounded corners at the top of the web page */
+	/* dersom dette skaper problemer for iframen så fjerner du det */
+	-webkit-border-radius: 7px 7px 0px 0px;
+	-moz-border-radius: 7px 7px 0px 0px;
+	border-radius: 7px 7px 0px 0px;
 }
 
 /*	The main div for displaying content */
 #content {
-	width: 100%;
-	background-color: green; /* for testing */
+	width: 1190px; /* 1190 + 5 padding both sides = 1200 */
+	background-color: #FFFFFF;
+	padding: 5px; /* Some space from edge to content */
 	height: 1500px; /* Bare for å teste scrollinga, endre om du vil */
 }
 
 /*	The footer div, bottom of web page */
 #footer {
 	width: 100%;
-	background-color: blue; /* for testing */
-	height: 200px; /* Bare å endre */
+	background-color: orange; /* for testing */
+	height: 150px; /* Bare å endre */
+	/* Slightly rounded corners at the bottom of the web page */
+	-webkit-border-radius: 0px 0px 7px 7px;
+	-moz-border-radius: 0px 0px 7px 7px;
+	border-radius: 0px 0px 7px 7px;
+}
+
+/*	Class for the menu iframes to use */
+.iframes {
+	width: 100%;
+	height: 100%;
+	border: none;
+	overflow: hidden; /* no scrolling, not reliable */
 }
