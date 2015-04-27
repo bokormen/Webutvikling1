@@ -29,7 +29,7 @@ body {
 /*	A header-div to stay inside the wrapper */
 #header {
 	width: 100%;
-	padding-top: 3px; /* just to put some space before the logo */
+	margin-top: 4px; /* just to put some space before the logo */
 	background-color: transparent; /* to show the background picture behind the logo */
 	height: 130px;
 }
@@ -63,6 +63,7 @@ body {
 	-webkit-border-radius: 0px 0px 7px 7px;
 	-moz-border-radius: 0px 0px 7px 7px;
 	border-radius: 0px 0px 7px 7px;
+	margin-bottom: 10px;
 }
 
 /*	Class for the menu iframes to use */

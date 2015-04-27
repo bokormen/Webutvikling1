@@ -1,0 +1,22 @@
+#content h1, #content h2, #content h3 {
+	color: #444444;
+	font-weight: bold;
+	margin: 0 0 3px 2px;
+	padding: 0;
+}
+
+#content h1 {
+	font-size: 25px;
+}
+
+#content h2 {
+	font-size: 22px;
+}
+
+#content h3 {
+	font-size: 19px;
+}
+
+#content p {
+	margin: 0 0 1em 0;
+}
