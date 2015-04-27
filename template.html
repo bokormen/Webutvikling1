@@ -6,19 +6,33 @@
 	<title>Sol & Varme</title>
 </head>
 <body>
-<div id="wrapper">
-	<div id="header">
+	<!--	The wrapper to contain the page -->
+	<div id="wrapper">
 
-	</div>
-	<div id="menu">
+		<!--	The header with the logo anchored to the front page -->
+		<div id="header">
+			<a href="index.html">
+				<img src="img/sologvarmelogo.png" alt="Sol og Varme Logo" />
+			</a>
+		</div>
 
-	</div>
-	<div id="content">
+		<!--	The main menu. We dont have to change every page if we make
+				change to links. Therefore we put the menues in iframes -->
+		<div id="menu">
+			<!--	Scrolling attribute set since css styling wont work with IE  -->
+			<iframe src="menu.html" class="iframes" scrolling="no"></iframe>
+		</div>
 
-	</div>
-	<div id="footer">
+		<!--	Page main content is displayed inside this div -->
+		<div id="content">
+			<p>content here!</p>
+		</div>
 
+		<!--	Footer div to contain an iframe for the footer menu -->
+		<div id="footer">
+			<!--	Another iframe for the footer menu -->
+			<iframe src="footermenu.html" class="iframes" scrolling="no"></iframe>
+		</div>
 	</div>
-</div>
 </body>
 </html>
