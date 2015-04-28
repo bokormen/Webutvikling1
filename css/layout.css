@@ -17,6 +17,7 @@ html {
 /*	Denne endrer du bare om du vil ha andre fonts Øyvind */
 body {
 	font-family: verdana, arial, sans-serif;
+	font-size: 12px;
 }
 
 /*	A wrapper to contain the main content of the webpage. */
@@ -76,4 +77,31 @@ body {
 
 img.logo {
 	border: none;
+}
+
+/* Dette må du bare endre på eller fjerne, men er vel kanskje mest naturlig å ha
+   annen styling av headerne i layouten og ikke hver enkelt css fil, evt. så får
+   spesialtilpassing av header layout skje i hver enkelt fil? */
+
+h1, h2, h3, h4 {
+	color: #444444;
+	font-weight: bold;
+	margin: 0 0 3px 2px;
+	padding: 0;
+}
+
+h1 {
+	font-size: 25px;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+h3 {
+	font-size: 19px;
+}
+
+h4 {
+	font-size: 16px;
 }
