@@ -5,8 +5,9 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 }
 
 #menuLineContent {
-	width: 90%;
-	margin-right: auto;
+	margin-left: 7px;
+	margin-right: 7px;
+	font-size: 24px;
 }
 
 #menuContent {
@@ -38,7 +39,9 @@ nav ul {
 	display: inline-table;
 }
 nav ul:after {
-	content: ""; clear: both; display: block;
+	content: "";
+	clear: both;
+	display: block;
 }
 
 nav ul li {
@@ -111,4 +114,16 @@ a:hover
 a:active
 {
 	color: #FFFFFF;
+}
+
+.searchButton {
+	padding: 3px 7px 2px;
+	margin: 0;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	background: orange;
+	border-radius: 7px;
 }
