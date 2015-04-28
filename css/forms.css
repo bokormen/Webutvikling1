@@ -1,0 +1,33 @@
+/* Div that contains the order form */
+#orders {
+	border: 1px solid black; /* bare så jeg ser hvor stor den blir */
+	width: 50%;
+	text-align: left;
+}
+/*
+#orders p {
+	vertical-align: center;
+}
+*/
+fieldset {
+	float: none;
+	width: 100%;
+	border: 1px solid black;
+	margin: 2px 2px 2px 2px;
+	padding-top: 5px;
+}
+
+/* Class for the labels to be used in front of text boxes in the order form */
+.labels {
+	width: 10em;
+	float: left;
+	text-align: right;
+	margin-right: 1em;
+	display: block;
+	height: 2em;
+}
+
+.input {
+	height: 1.4em;
+	margin-bottom: 5px;
+}

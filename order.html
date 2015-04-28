@@ -34,15 +34,21 @@
 		<!--	Page main content is displayed inside this div -->
 		<div id="content">
 		<h3>Her kan du bestille reisen din!</h3>
-			<div id="orderform">
+			<div id="orders">
 				<h4>Din valgte destinasjon er <script>document.write(getElement('destination'));</script></h4>
 				<h4>Du skal bo på <script>document.write(getElement('accomodation'));</script></h4>
 				<p>? eller &destination=Somewhere</p>
 				<p>? eller &accomodation=Hotell (eller Leilighet)</p>
 				<p>Kan putte så mye ting man vil i url i utgangspunktet, må bare vite hva man skal hente ut</p>
 
-
-
+				<fieldset>
+					<legend>En boks med noe greier</legend>
+					<form id="newOrder">
+						<p><label class="labels" for="firstName">Fornavn:</label><input type="text" id="firstName" name="Fornavn" class="input"></p>
+						<p><label class="labels" for="lastName">Etternavn:</label><input type="text" id="lastName" name="Etternavn" class="input"></p>
+						<p><label class="labels" for="eMail">E-post:</label><input type="text" id="eMail" name="E-post" class="input"></p>
+					</form>
+				</fieldset>
 			</div>
 		</div>
 
