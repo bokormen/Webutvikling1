@@ -1,3 +1,5 @@
+window.onload = function() { calcTotal() };
+
 // function to retrieve elements from URL substring
 // We will use this to pre-fill some of the order form boxes
 function getElement(element) {
@@ -25,3 +27,75 @@ function showOption(show){
 function hideOption(hide){
 	document.getElementById(hide).style.display='none';
 }
+
+var destinationPrices = [];
+destinationPrices["Kypros"]=3000;
+destinationPrices["Malorca"]=4000;
+destinationPrices["Ibiza"]=5000;
+
+var accomodationPrices = [];
+accomodationPrices["Suite"]=3000;
+accomodationPrices["Dobbeltrom"]=2500;
+accomodationPrices["Enkeltrom"]=2000;
+var accomoAptPrice = 3500;
+
+function getDestinationPrice () {
+	var destPrice = 0;
+	var dest = getElement('destination');
+	for (i in destinationPrices) {
+		if (i == dest) {
+			destPrice = destinationPrices[i];
+			break;
+		}
+	}
+	return destPrice;
+}
+
+function membershipRebate() {
+	var rebate = 1;
+	var calcForm = document.forms["newOrder"];
+	var isMember = calcForm.elements["isMember"];
+	if (isMember.checked==true) { rebate = 0.8; }
+	return rebate;
+}
+
+function getVacLength() {
+	var length = 0;
+	length = document.getElementById("howManyWeeks").value;
+	return length;
+}
+
+function getPeople() {
+	var people = 1;
+	var input = document.getElementById("travelers").value;
+	if (parseFloat(input) == parseInt(input) && !isNaN(input)) {
+		people = input;
+	}
+	return people;
+}
+
+function getAccPrice() {
+	var accPrice=0;
+	var accRadio = document.getElementById("optApt").checked;
+	if(accRadio) {
+		accPrice = accomoAptPrice;
+	}
+	var accChoice = document.getElementById("roomSize").value;
+	if(!accRadio) {
+		for (i in accomodationPrices) {
+			if (i == accChoice) {
+				accPrice = accomodationPrices[i];
+				break;
+			}
+		}
+	}
+	return accPrice;
+}
+
+function calcTotal() {
+	var totalPrice = (((getDestinationPrice() + getAccPrice()) * getVacLength()) * getPeople()) * membershipRebate();
+	var divTotPrice = document.getElementById('totalPrice');
+	divTotPrice.style.display='block';
+	document.getElementById('totalPrice').innerHTML = "Reisen din vil koste kr " + totalPrice + ",-";
+}
+

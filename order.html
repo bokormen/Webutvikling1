@@ -45,22 +45,20 @@
 					<form id="newOrder">
 
 						<div id="radioChoices">
-							<div id="radioMember">
-								<p class="centered">Er du medlem?</p>
-								<p class="centered">
-									<label for="optYes">Ja:</label><input type="radio" id="optYes" name="optYesNo" />
-									<label class="needDistanceLeft" for="optNo">Nei:</label><input type="radio" id="optNo" name="optYesNo" />
-								</p>
+							<div id="checkMember">
+								<h6>Medlem?</h6>
+								<p><label class="labels2" for="isMember">Jeg er medlem:</label><input type="checkBox" id="isMember" onclick="calcTotal()" /></p>
 							</div>
 							<div id="radioAcco">
-								<p class="centered">Hvordan ønsker du å bo?</p>
+								<h6>Hvordan vil du bo?</h6>
 								<p class="centered">
-									<label for="optHotel">Hotell:</label><input type="radio" id="optHotel" name="optAccomo" onClick="showOption('chooseRoom') || showOption('hotelFood') || hideOption('aptHouseKeeping')" />
-									<label class="needDistanceLeft" for="optApt">Leilighet:</label><input type="radio" id="optApt" name="optAccomo" onClick="hideOption('chooseRoom') || hideOption('hotelFood')  || showOption('aptHouseKeeping')" />
+									<label for="optHotel">Hotell:</label><input type="radio" id="optHotel" name="optAccomo" onClick="showOption('chooseRoom') || showOption('hotelFood') || hideOption('aptHouseKeeping') || calcTotal()" />
+									<label class="needDistanceLeft" for="optApt">Leilighet:</label><input type="radio" id="optApt" name="optAccomo" onClick="hideOption('chooseRoom') || hideOption('hotelFood')  || showOption('aptHouseKeeping') || calcTotal()" />
 								</p>
 							</div>
 						</div>
 
+						<h6>Når ønsker du å reise?</h6>
 						<!-- Choose departure date by writing the date into 3 seperate text boxes -->
 						<p><label class="labels" for="fromDay">Fra dato:</label>
 							<input type="text" id="fromDay" name="Fra_dag" class="dates" value="dd" onfocus="this.select();"/>
@@ -70,14 +68,14 @@
 							<input type="text" id="staticDay" class="dates" value="25" readonly />
 							<input type="text" id="staticMonth" class="dates" value="7" readonly />
 							<input type="text" id="staticYear" class="dates" value="15" readonly />
-						</p>
+						</p><br/>
 
+						<h6>Antall uker du ønsker å reise</h6>
 						<!-- Option to choose for how many weeks customer wants to stay. The drop down menu is populated
 						 	with a javascript function, this way it easy to change the number of weeks, or even change it
 						 	to number of days without needing to write loads of new code for the new options -->
-						<p><label class="labels" for="howManyWeeks">Antall uker:</label>
-							<select id="howManyWeeks" class="choices" name="Antall_reisedager">
-								<option>velg</option>
+						<p><label class="labels2" for="howManyWeeks">Antall uker:</label>
+							<select id="howManyWeeks" class="choices" name="Antall_reisedager" onchange="calcTotal()">
 								<!-- This scripts populates the pull down with the available number of weeks -->
 								<script type="text/javascript" src="javascript/length.js"></script>
 							</select>
@@ -86,7 +84,7 @@
 
 						<div id="options">
 							<div id="extras">
-								<h5>Diverse</h5>
+								<h6>Diverse</h6>
 								<!-- <p class="centered">Diverse</p> -->
 								<!-- Extra options available for customers -->
 								<div id="wantWiFi">
@@ -101,17 +99,17 @@
 							</div>
 
 							<div id="stuff">
-								<h5>Annet</h5>
+								<h6>Annet</h6>
 
 								<!-- Size of the hotel room, not visible unless "Hotell" is chosen above -->
 								<div id="howMany">
-									<p><label class="labels3" for="travelers">Antall personer:</label><input type="text" id="travelers" name="Fra_dag" class="dates" value="nn" onfocus="this.select();"/></p>
+									<p><label class="labels3" for="travelers">Antall personer:</label><input type="text" id="travelers" name="Fra_dag" class="dates" value="nn" onfocus="this.select();" onchange="calcTotal()" /></p>
 								</div>
 
 								<!-- Size of the hotel room, not visible unless "Hotell" is chosen above -->
 								<div id="chooseRoom">
 									<p><label class="labels3" for="roomSize">Romstørrelse:</label></p>
-									<select id="roomSize" class="choices" name="Romstorrelse">
+									<select id="roomSize" class="choices" name="Romstorrelse" onchange="calcTotal()">
 										<option>velg</option>
 										<option>Enkeltrom</option>
 										<option>Dobbeltrom</option>
@@ -129,6 +127,7 @@
 
 			<div id="calculations">
 				<h1>Oversikt over din bestilling</h1>
+				<div id="totalPrice"></div>
 			</div>
 
 		</div>

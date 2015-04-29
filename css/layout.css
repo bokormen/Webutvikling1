@@ -83,7 +83,7 @@ img.logo {
    annen styling av headerne i layouten og ikke hver enkelt css fil, evt. så får
    spesialtilpassing av header layout skje i hver enkelt fil? */
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
 	color: orange;
 	font-weight: bold;
 	margin: 0 0 3px 2px;
@@ -108,4 +108,9 @@ h4 {
 
 h5 {
 	font-size: 14px;
+}
+
+h6 {
+	font-size: 14px;
+	text-align: center;
 }

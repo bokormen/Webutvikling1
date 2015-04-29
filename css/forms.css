@@ -1,6 +1,7 @@
+
+
 /* Div that contains the order form */
 #orders {
-	border: 1px solid black; /* bare så jeg ser hvor stor den blir */
 	width: 49%;
 	text-align: left;
 	position: absolute;
@@ -17,58 +18,58 @@
 }
 
 #radioChoices {
-	border: 1px solid red; /* bare så jeg ser hvor stor den blir */
+	margin-top:		10px;
 	width: 580px;
-	height: 65px;
+	height: 52px;
 	position: relative;
 }
 
-#radioMember {
-	border: 1px solid blue; /* bare så jeg ser hvor stor den blir */
+#checkMember {
 	width: 288px;
-	height: 60px;
+	height: 50px;
 	position: absolute;
 }
 
 #radioAcco {
-	border: 1px solid yellow; /* bare så jeg ser hvor stor den blir */
 	width: 288px;
-	height: 60px;
+	height: 50px;
 	position: absolute;
 	margin-left: 290px;
 }
 
 #options {
-	border: 1px solid red; /* bare så jeg ser hvor stor den blir */
-	width: 580px;
-	height: 105px;
-	position: relative;
+	margin-top: 10px;
+	width:			580px;
+	height:			105px;
+	position:		relative;
 }
 
 #extras {
-	border: 1px solid blue; /* bare så jeg ser hvor stor den blir */
-	width: 288px;
-	height: 100px;
-	position: absolute;
+	width:			288px;
+	height:			100px;
+	position:		absolute;
 }
 
 #stuff {
-	border: 1px solid yellow; /* bare så jeg ser hvor stor den blir */
-	width: 288px;
-	position: absolute;
-	margin-left: 290px;
+	width:			288px;
+	position:		absolute;
+	margin-left:	290px;
 	height: 100px;
 }
 
 #chooseRoom, #hotelFood, #aptHouseKeeping {
-	display: none;
-	width: 99%;
-	position: relative;
+	display:		none;
+	width:			99%;
+	position:		relative;
 }
 
 #howMany {
 	width: 99%;
 	position: relative;
+}
+
+#totalPrice {
+	background-color: orange;
 }
 
 fieldset {
