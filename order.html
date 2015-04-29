@@ -55,8 +55,8 @@
 							<div id="radioAcco">
 								<p class="centered">Hvordan ønsker du å bo?</p>
 								<p class="centered">
-									<label for="optHotel">Hotell:</label><input type="radio" id="optHotel" name="optAccomo" onClick="showOption('chooseRoom')" />
-									<label class="needDistanceLeft" for="optApt">Leilighet:</label><input type="radio" id="optApt" name="optAccomo" onClick="hideOption('chooseRoom')" />
+									<label for="optHotel">Hotell:</label><input type="radio" id="optHotel" name="optAccomo" onClick="showOption('chooseRoom') || showOption('hotelFood') || hideOption('aptHouseKeeping')" />
+									<label class="needDistanceLeft" for="optApt">Leilighet:</label><input type="radio" id="optApt" name="optAccomo" onClick="hideOption('chooseRoom') || hideOption('hotelFood')  || showOption('aptHouseKeeping')" />
 								</p>
 							</div>
 						</div>

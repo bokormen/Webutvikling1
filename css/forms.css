@@ -61,7 +61,7 @@
 }
 
 #chooseRoom, #hotelFood, #aptHouseKeeping {
-/*	display: none; */
+	display: none;
 	width: 99%;
 	position: relative;
 }
