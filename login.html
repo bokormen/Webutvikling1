@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+	<link type="text/css" rel="stylesheet" href="css/layout.css"/>
+	<link type="text/css" rel="stylesheet" href="css/forms.css"/>
+	<meta charset="UTF-8">
+	<!--	jQuery downloaded from google api's -->
+	<script src="javascript/jquery.min.js"></script>
+	<!--	Script to change logo opacity when mouse hovers over it -->
+	<script src="javascript/logo.js"></script>
+	<title>Sol & Varme</title>
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+</head>
+<body>
+<!--	The wrapper to contain the page -->
+<div id="wrapper">
+
+	<!--	The header with the logo anchored to the front page -->
+	<div id="header">
+		<a href="index.html">
+			<img src="img/sologvarmelogo.png" alt="Sol og Varme Logo" class="logo"/>
+		</a>
+	</div>
+
+	<!--	The main menu. We dont have to change every page if we make
+			change to links. Therefore we put the menus in iframes -->
+	<div id="menu">
+		<!--	Scrolling attribute set since css styling wont work with IE  -->
+		<iframe src="menu.html" class="iframes" scrolling="no"></iframe>
+	</div>
+
+	<!--	Page main content is displayed inside this div -->
+	<div id="content">
+		<fieldset>
+			<legend>Logg inn med brukeren din</legend>
+			<form id="loginField">
+				<p><label class="labels" for="userName">Brukernavn:</label><input type="text" id="userName" name="Brukernavn" class="input"/><span class="infotext">Brukernavnet er din e-postadresse.</span></p>
+				<p><label class="labels" for="password">Passord:</label><input type="password" id="password" name="Passord" class="input"/></p>
+				<p class="centered">Har du ikke registrert deg? <a href="register.html" target="_new">Registrer deg her!</a></p>
+				<p class="centered">
+					<input class="button" type="submit" id="submit" value="Logg inn"/>
+					<input class="button" type="reset" id="reset" value="Nullstill"/>
+				</p>
+			</form>
+		</fieldset>
+	</div>
+
+	<!--	Footer div to contain an iframe for the footer menu -->
+	<div id="footer">
+		<!--	Another iframe for the footer menu -->
+		<iframe src="footermenu.html" class="iframes" scrolling="no"></iframe>
+	</div>
+</div>
+</body>
+</html>

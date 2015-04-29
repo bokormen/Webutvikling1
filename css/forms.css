@@ -11,10 +11,14 @@
 */
 fieldset {
 	float: none;
-	width: 100%;
 	border: 1px solid black;
 	margin: 2px 2px 2px 2px;
 	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#orders.fieldset {
+	width: 99%;
 }
 
 /* Class for the labels to be used in front of text boxes in the order form */
@@ -30,4 +34,47 @@ fieldset {
 .input {
 	height: 1.4em;
 	margin-bottom: 5px;
+}
+
+/*
+legend {
+	padding-left: 50px;
+}
+*/
+
+.infotext {
+	margin-left: 10px;
+}
+
+p.centered {
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.button {
+	height: 2em;
+	width: 8em;
+	background: #FFFFFF;
+	border: 1px solid black;
+}
+
+.button:hover {
+	background: orange;
+}
+
+.button:active {
+	background: #BBBBBB;
+}
+
+.dates {
+	width: 25px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.labRad {
+	text-align: right;
+	display: inline-block;
+	width: 55px;
 }
