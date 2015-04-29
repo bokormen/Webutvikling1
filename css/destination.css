@@ -1,17 +1,28 @@
 #leftPanel {
 	width: 700px;
 	float: left;
-	margin-left: 33px;
-/*	-webkit-align-content: center;
-	align-content: center;*/
+	margin-left: 20px;
 }
 
 #rightPanel {
-	margin-right: 33px;
+	margin-right: 20px;
 	width: 400px;
 	float: right;
-/*	-webkit-align-content: center;
-	align-content: center;*/
+}
+
+#description {
+}
+
+#picture {
+	float: left;
+	width: 200px;
+}
+
+#text {
+	margin-left: 200px;
+	width: 460px;
+	padding-left: 15px;
+	text-align: left;
 }
 
 .panel {
@@ -20,18 +31,7 @@
 	border-radius: 10px;
 	border: 1px solid lightslategrey;
 	padding: 10px;
-/*	display: block;
-	margin-left: auto;
-	margin-right: auto;*/
-}
-
-.center {
-	position: relative;
-	display: block;
-	margin: 10px auto;
 	text-align: center;
-/*
-	margin-left: auto;
-	margin-right: auto;*/
+	box-shadow: 2px 2px 2px #888888;
 }
 
