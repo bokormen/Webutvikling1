@@ -57,7 +57,7 @@
 	height: 100px;
 }
 
-#chooseRoom, #hotelFood, #aptHouseKeeping {
+#chooseRoom, #hotelFood, #hotelAC, #aptHouseKeeping, #aptSwimming {
 	display:		none;
 	width:			99%;
 	position:		relative;
