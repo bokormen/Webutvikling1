@@ -39,6 +39,16 @@ accomodationPrices["Dobbeltrom"]=2500;
 accomodationPrices["Enkeltrom"]=2000;
 var accomoAptPrice = 3500;
 
+var wifiPrice = 250;
+var foodPrice = 400;
+var ACPrice = 250;
+var swimPrice = 200;
+var washPrice = 500;
+
+function getSeason() {
+	var day = document.getElementById("")
+}
+
 function getDestinationPrice () {
 	var destPrice = 0;
 	var dest = getElement('destination');
@@ -65,7 +75,7 @@ function getVacLength() {
 	return length;
 }
 
-function getPeople() {
+function getRooms() {
 	var people = 1;
 	var input = document.getElementById("travelers").value;
 	if (parseFloat(input) == parseInt(input) && !isNaN(input)) {
@@ -92,8 +102,27 @@ function getAccPrice() {
 	return accPrice;
 }
 
+function getOptions() {
+	var options = 0;
+	var wifi = document.getElementById("wifi").checked;
+	var food = document.getElementById("food").checked;
+	var AC = document.getElementById("hotAC").checked;
+	var swim = document.getElementById("aptSwim").checked;
+	var wash = document.getElementById("housekeeping").checked;
+	if (document.getElementById("optHotel").checked) {
+		if(wifi) {options += wifiPrice;}
+		if(food) {options += foodPrice;}
+		if(AC) {options += ACPrice;}
+	} else if (document.getElementById("optApt").checked) {
+		if (wifi) {options += wifiPrice;}
+		if (swim) {options += swimPrice;}
+		if (wash) {options += washPrice;}
+	}
+	return options;
+}
+
 function calcTotal() {
-	var totalPrice = (((getDestinationPrice() + getAccPrice()) * getVacLength()) * getPeople()) * membershipRebate();
+	var totalPrice = (((getDestinationPrice() + getAccPrice() + getOptions()) * getVacLength()) * getRooms()) * membershipRebate();
 	var divTotPrice = document.getElementById('totalPrice');
 	divTotPrice.style.display='block';
 	document.getElementById('totalPrice').innerHTML = "Reisen din vil koste kr " + totalPrice + ",-";

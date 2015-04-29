@@ -57,8 +57,13 @@
 	height: 100px;
 }
 
-#chooseRoom, #hotelFood, #hotelAC, #aptHouseKeeping, #aptSwimming {
+#aptHouseKeeping, #aptSwimming {
 	display:		none;
+	width:			99%;
+	position:		relative;
+}
+
+#chooseRoom, #hotelFood, #hotelAC {
 	width:			99%;
 	position:		relative;
 }
@@ -76,13 +81,6 @@ fieldset {
 	float: none;
 	border: 1px solid black;
 	margin: 2px 2px 2px 2px;
-}
-
-fieldset.nested {
-	text-align: center;
-	margin: 20px auto 20px;
-	padding-top: 8px;
-	border: 0;
 }
 
 p {
@@ -106,7 +104,7 @@ p.centered {
 	display: block;}
 
 .labels2 {
-	width: 14em;
+	width: 15em;
 	float: left;
 	text-align: right;
 	margin-right: 0.5em;

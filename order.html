@@ -52,7 +52,7 @@
 							<div id="radioAcco">
 								<h6>Hvordan vil du bo?</h6>
 								<p class="centered">
-									<label for="optHotel">Hotell:</label><input type="radio" id="optHotel" name="optAccomo" onClick="showOption('chooseRoom') || showOption('hotelFood') || showOption('hotelAC') || hideOption('aptHouseKeeping') || hideOption('aptSwimming') || calcTotal()" />
+									<label for="optHotel">Hotell:</label><input type="radio" id="optHotel" name="optAccomo" checked="true" onClick="showOption('chooseRoom') || showOption('hotelFood') || showOption('hotelAC') || hideOption('aptHouseKeeping') || hideOption('aptSwimming') || calcTotal()" />
 									<label class="needDistanceLeft" for="optApt">Leilighet:</label><input type="radio" id="optApt" name="optAccomo" onClick="hideOption('chooseRoom') || hideOption('hotelFood') || hideOption('hotelAC') || showOption('aptSwimming') || showOption('aptHouseKeeping') || calcTotal()" />
 								</p>
 							</div>
@@ -85,22 +85,21 @@
 						<div id="options">
 							<div id="extras">
 								<h6>Diverse</h6>
-								<!-- <p class="centered">Diverse</p> -->
 								<!-- Extra options available for customers -->
 								<div id="wantWiFi">
-									<p><label class="labels2" for="wifi" name="WiFi_Internet">Wi-Fi/ Internet:</label><input type="checkbox" id="wifi" name="WiFi_Internet" /></p>
+									<p><label class="labels2" for="wifi" name="WiFi_Internet">Wi-Fi/ Internet:</label><input type="checkbox" id="wifi" name="WiFi_Internet" onclick="calcTotal()" /></p>
 								</div>
 								<div id="hotelFood">
-									<p><label class="labels2" for="dinner" name="Hotell_mat">Mat på hotellet:</label><input type="checkbox" id="dinner" name="Hotell_mat" /></p>
+									<p><label class="labels2" for="food" name="Hotell_mat">Mat på hotellet:</label><input type="checkbox" id="food" name="Hotell_mat" onclick="calcTotal()" /></p>
 								</div>
 								<div id="hotelAC">
-									<p><label class="labels2" for="hotAC" name="Hotell_Air_Condition">Aircondition:</label><input type="checkbox" id="hotAC" name="Hotell_Air_Condition" /></p>
+									<p><label class="labels2" for="hotAC" name="Hotell_Air_Condition">Aircondition:</label><input type="checkbox" id="hotAC" name="Hotell_Air_Condition" onclick="calcTotal()" /></p>
 								</div>
 								<div id="aptSwimming">
-									<p><label class="labels2" for="aptSwim" name="Svommebasseng">Svømmebasseng:</label><input type="checkbox" id="aptSwim" name="Svommebasseng" /></p>
+									<p><label class="labels2" for="aptSwim" name="Svommebasseng">Svømmebasseng:</label><input type="checkbox" id="aptSwim" name="Svommebasseng" onclick="calcTotal()" /></p>
 								</div>
 								<div id="aptHouseKeeping">
-									<p><label class="labels2" for="housekeeping" name="Vaske_leilighet">Vask av leilighet:</label><input type="checkbox" id="housekeeping" name="Vaske_leilighet" /></p>
+									<p><label class="labels2" for="housekeeping" name="Vaske_leilighet">Vask av leilighet:</label><input type="checkbox" id="housekeeping" name="Vaske_leilighet" onclick="calcTotal()" /></p>
 								</div>
 							</div>
 
@@ -109,7 +108,7 @@
 
 								<!-- Size of the hotel room, not visible unless "Hotell" is chosen above -->
 								<div id="howMany">
-									<p><label class="labels3" for="travelers">Antall personer:</label><input type="text" id="travelers" name="Fra_dag" class="dates" value="nn" onfocus="this.select();" onchange="calcTotal()" /></p>
+									<p><label class="labels2" for="travelers">Antall rom/ leiligheter:</label><input type="text" id="travelers" name="Fra_dag" class="dates" value="nn" onfocus="this.select();" onchange="calcTotal()" /></p>
 								</div>
 
 								<!-- Size of the hotel room, not visible unless "Hotell" is chosen above -->
