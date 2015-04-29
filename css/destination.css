@@ -1,0 +1,34 @@
+#leftPanel {
+	width: 700px;
+	float: left;
+	margin-left: 33px;
+/*	-webkit-align-content: center;
+	align-content: center;*/
+}
+
+#rightPanel {
+	margin-right: 33px;
+	width: 400px;
+	float: right;
+/*	-webkit-align-content: center;
+	align-content: center;*/
+}
+
+.panel {
+	margin-top: 10px;
+	background: gainsboro;
+	border-radius: 10px;
+	border: 1px solid lightslategrey;
+	padding: 10px;
+/*	display: block;
+	margin-left: auto;
+	margin-right: auto;*/
+}
+
+.center {
+	position: relative;
+	/*display: block;*/
+	margin-left: auto;
+	margin-right: auto;
+}
+
