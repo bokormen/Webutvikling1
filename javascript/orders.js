@@ -17,3 +17,11 @@ function getElement(element) {
 	// If nothing matches the query return boolean false
 	return(false);
 }
+
+function showOption(show){
+	document.getElementById(show).style.display='block';
+}
+
+function hideOption(hide){
+	document.getElementById(hide).style.display='none';
+}

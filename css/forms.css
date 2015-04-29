@@ -1,8 +1,74 @@
 /* Div that contains the order form */
 #orders {
 	border: 1px solid black; /* bare så jeg ser hvor stor den blir */
-	width: 50%;
+	width: 49%;
 	text-align: left;
+	position: absolute;
+}
+
+/* Div that contains calculations based on choices made by the customer */
+#calculations {
+	border: 1px solid black; /* bare så jeg ser hvor stor den blir */
+	width: 49%;
+	text-align: left;
+	height: 400px;
+	position: absolute;
+	margin-left: 600px;
+}
+
+#radioChoices {
+	border: 1px solid red; /* bare så jeg ser hvor stor den blir */
+	width: 580px;
+	height: 65px;
+	position: relative;
+}
+
+#radioMember {
+	border: 1px solid blue; /* bare så jeg ser hvor stor den blir */
+	width: 288px;
+	height: 60px;
+	position: absolute;
+}
+
+#radioAcco {
+	border: 1px solid yellow; /* bare så jeg ser hvor stor den blir */
+	width: 288px;
+	height: 60px;
+	position: absolute;
+	margin-left: 290px;
+}
+
+#options {
+	border: 1px solid red; /* bare så jeg ser hvor stor den blir */
+	width: 580px;
+	height: 105px;
+	position: relative;
+}
+
+#extras {
+	border: 1px solid blue; /* bare så jeg ser hvor stor den blir */
+	width: 288px;
+	height: 100px;
+	position: absolute;
+}
+
+#stuff {
+	border: 1px solid yellow; /* bare så jeg ser hvor stor den blir */
+	width: 288px;
+	position: absolute;
+	margin-left: 290px;
+	height: 100px;
+}
+
+#chooseRoom, #hotelFood, #aptHouseKeeping {
+/*	display: none; */
+	width: 99%;
+	position: relative;
+}
+
+#howMany {
+	width: 99%;
+	position: relative;
 }
 
 fieldset {
@@ -11,14 +77,8 @@ fieldset {
 	margin: 2px 2px 2px 2px;
 }
 
-#orders.fieldset {
-	width: 550px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
 fieldset.nested {
-	width: 275px;
+	text-align: center;
 	margin: 20px auto 20px;
 	padding-top: 8px;
 	border: 0;
@@ -31,22 +91,32 @@ p {
 
 p.centered {
 	text-align: center;
-	margin-top: 0;
-	margin-bottom: 0;
 }
 
 .needDistanceLeft {
 	margin-left: 20px;
 }
 
-/* Class for the labels to be used in front of text boxes in the order form */
 .labels {
-	width: 10em;
+	width: 8em;
 	float: left;
 	text-align: right;
 	margin-right: 0.5em;
-	display: block;
-}
+	display: block;}
+
+.labels2 {
+	width: 14em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block;}
+
+.labels3 {
+	width: 10.5em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block;}
 
 .input {
 	height: 20px;
@@ -58,7 +128,6 @@ input[type="radio"] {
 }
 
 .choices {
-	width: 95px;
 	height: 20px;
 }
 
