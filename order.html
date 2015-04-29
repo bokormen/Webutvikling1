@@ -52,8 +52,8 @@
 							<div id="radioAcco">
 								<h6>Hvordan vil du bo?</h6>
 								<p class="centered">
-									<label for="optHotel">Hotell:</label><input type="radio" id="optHotel" name="optAccomo" onClick="showOption('chooseRoom') || showOption('hotelFood') || hideOption('aptHouseKeeping') || calcTotal()" />
-									<label class="needDistanceLeft" for="optApt">Leilighet:</label><input type="radio" id="optApt" name="optAccomo" onClick="hideOption('chooseRoom') || hideOption('hotelFood')  || showOption('aptHouseKeeping') || calcTotal()" />
+									<label for="optHotel">Hotell:</label><input type="radio" id="optHotel" name="optAccomo" onClick="showOption('chooseRoom') || showOption('hotelFood') || showOption('hotelAC') || hideOption('aptHouseKeeping') || hideOption('aptSwimming') || calcTotal()" />
+									<label class="needDistanceLeft" for="optApt">Leilighet:</label><input type="radio" id="optApt" name="optAccomo" onClick="hideOption('chooseRoom') || hideOption('hotelFood') || hideOption('hotelAC') || showOption('aptSwimming') || showOption('aptHouseKeeping') || calcTotal()" />
 								</p>
 							</div>
 						</div>
@@ -92,6 +92,12 @@
 								</div>
 								<div id="hotelFood">
 									<p><label class="labels2" for="dinner" name="Hotell_mat">Mat på hotellet:</label><input type="checkbox" id="dinner" name="Hotell_mat" /></p>
+								</div>
+								<div id="hotelAC">
+									<p><label class="labels2" for="hotAC" name="Hotell_Air_Condition">Aircondition:</label><input type="checkbox" id="hotAC" name="Hotell_Air_Condition" /></p>
+								</div>
+								<div id="aptSwimming">
+									<p><label class="labels2" for="aptSwim" name="Svommebasseng">Svømmebasseng:</label><input type="checkbox" id="aptSwim" name="Svommebasseng" /></p>
 								</div>
 								<div id="aptHouseKeeping">
 									<p><label class="labels2" for="housekeeping" name="Vaske_leilighet">Vask av leilighet:</label><input type="checkbox" id="housekeeping" name="Vaske_leilighet" /></p>
