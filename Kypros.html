@@ -3,6 +3,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="css/layout.css"/>
 	<link type="text/css" rel="stylesheet" href="css/menu.css">
+	<link type="text/css" rel="stylesheet" href="css/destination.css">
 	<meta charset="UTF-8">
 	<!--  jQuery downloaded from google api's -->
 	<script src="javascript/jquery.min.js"></script>
@@ -12,58 +13,77 @@
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 </head>
 <body>
-	<!--	The wrapper to contain the page -->
-	<div id="wrapper">
+<!--	The wrapper to contain the page -->
+<div id="wrapper">
 
-		<!--	The header with the logo anchored to the front page -->
-		<div id="header">
-			<a href="index.html">
-				<img src="img/sologvarmelogo.png" alt="Sol og Varme Logo" class="logo"/>
-			</a>
-		</div>
+	<!--	The header with the logo anchored to the front page -->
+	<div id="header">
+		<a href="index.html">
+			<img src="img/sologvarmelogo.png" alt="Sol og Varme Logo" class="logo"/>
+		</a>
+	</div>
 
-		<!--	The main menu. We dont have to change every page if we make
-				change to links. Therefore we put the menus in iframes -->
-		<div id="menu">
-			<!--	Scrolling attribute set since css styling wont work with IE  -->
-			<div id="menuLineContent">
-				<div id="menuContent">
-					<nav>
-						<ul>
-							<li><a href="#">Destinasjoner</a>
-								<ul>
-									<li><a href="Malorca.html">Malorca</a></li>
-									<li><a href="Ibiza.html">Ibiza</a></li>
-									<li><a href="Kypros.html">Kypros</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Tilbud</a></li>
-							<li><a href="info.html">Reiseinfo</a></li>
-							<li><a href="login.html">Mine Sider</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div id="searchContent">
-					<form id="searchForm">
-						<input type="text" name="searchString" placeholder="Søk etter destinasjon her">
-						<input type="submit" value="Søk" class="searchButton">
-					</form>
-				</div>
+	<!--	The main menu. We dont have to change every page if we make
+			change to links. Therefore we put the menus in iframes -->
+	<div id="menu">
+		<!--	Scrolling attribute set since css styling wont work with IE  -->
+		<div id="menuLineContent">
+			<div id="menuContent">
+				<nav>
+					<ul>
+						<li><a href="#">Destinasjoner</a>
+							<ul>
+								<li><a href="Malorca.html">Malorca</a></li>
+								<li><a href="Ibiza.html">Ibiza</a></li>
+								<li><a href="Kypros.html">Kypros</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Tilbud</a></li>
+						<li><a href="info.html">Reiseinfo</a></li>
+						<li><a href="login.html">Mine Sider</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div id="searchContent">
+				<form id="searchForm">
+					<input type="text" name="searchString" placeholder="Søk etter destinasjon her">
+					<input type="submit" value="Søk" class="searchButton">
+				</form>
 			</div>
 		</div>
+	</div>
 
-		<!--	Page main content is displayed inside this div -->
-		<div id="content">
+	<!--	Page main content is displayed inside this div -->
+	<div id="content">
+
+		<div id="leftPanel">
+
 			<div id="description">
-
-			</div>
-
-			<div id="order">
-
+				<div id="picture">Picture</div>
+				<div id="text">Text</div>
 			</div>
 
 			<div id="youtube">
-				<iframe width="420" height="315" src="https://www.youtube.com/embed/bAwto68jEuI" frameborder="0" allowfullscreen></iframe>
+				<iframe width="640" height="480" src="https://www.youtube.com/embed/bAwto68jEuI" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			<div id="google maps">
+				<iframe width="600" height="450" frameborder="0" style="border:0"
+						src="https://www.google.com/maps/embed/v1/place?q=Kypros&key=AIzaSyDuO-TD-FrFh0E3-6C2W70b_SWui3fogPc"></iframe>
+			</div>
+
+		</div>
+
+		<div id="rightPanel">
+
+			<div id="order">
+				På Kypros er har vi både hoteller og leiligheter tilgjengelig for overnatting
+				<a href="#"><img src="img/orderHotel.svg"></a>
+				<a href="#"><img src="img/orderApartment.svg"></a>
+			</div>
+
+			<div id="yr">
+				<script src="http://www.yr.no/sted/Kypros/Nikosia/Cyprus/ekstern_boks_liten.js"></script><noscript><a href="http://www.yr.no/sted/Kypros/Nikosia/Cyprus/">yr.no: Værvarsel for Cyprus</a></noscript>
 			</div>
 
 			<div id="tripadvisor">
@@ -77,22 +97,15 @@
 				<script src="http://www.jscache.com/wejs?wtype=cdsdmo&amp;uniq=27&amp;locationId=190372&amp;lang=no&amp;photo=true&amp;hotel=n&amp;attraction=y&amp;restaurant=y&amp;display_version=2"></script>
 			</div>
 
-			<div id="yr">
-				<script src="http://www.yr.no/sted/Kypros/Nikosia/Cyprus/ekstern_boks_tre_dager.js"></script><noscript><a href="http://www.yr.no/sted/Kypros/Nikosia/Cyprus/">yr.no: Værvarsel for Cyprus</a></noscript>
-			</div>
-
-			<div id="google maps">
-				<iframe width="600" height="450" frameborder="0" style="border:0"
-						src="https://www.google.com/maps/embed/v1/place?q=Kypros&key=AIzaSyDuO-TD-FrFh0E3-6C2W70b_SWui3fogPc"></iframe>
-			</div>
-
 		</div>
 
-		<!--	Footer div to contain an iframe for the footer menu -->
-		<div id="footer">
-			<!--	Another iframe for the footer menu -->
-			<iframe src="footermenu.html" class="iframes" scrolling="no"></iframe>
-		</div>
 	</div>
+
+	<!--	Footer div to contain an iframe for the footer menu -->
+	<div id="footer">
+		<!--	Another iframe for the footer menu -->
+		<iframe src="footermenu.html" class="iframes" scrolling="no"></iframe>
+	</div>
+</div>
 </body>
 </html>
