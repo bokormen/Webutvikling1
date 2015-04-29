@@ -46,7 +46,26 @@ var swimPrice = 200;
 var washPrice = 500;
 
 function getSeason() {
-	var day = document.getElementById("")
+	season = 1;
+	// var inputDay = document.getElementById("fromDay").value;
+	var inputMonth = document.getElementById("fromMonth").value;
+	// var inputYear = document.getElementById("fromYear").value;
+	/*if (parseFloat(inputDay) == parseInt(inputDay) && !isNaN(inputDay)) {
+		var day = inputDay;
+	}*/
+	if (parseFloat(inputMonth) == parseInt(inputMonth) && !isNaN(inputMonth)) {
+		var month = inputMonth;
+	}
+	/*if (parseFloat(inputYear) == parseInt(inputYear) && !isNaN(inputYear)) {
+		var year = inputYear;
+	}*/
+	if (month <= 2 || month >= 11) {
+		season *= 0.7;
+	}
+	else if (month <= 4 || month >= 9) {
+		season *= 0.85;
+	}
+	return season;
 }
 
 function getDestinationPrice () {
@@ -122,7 +141,7 @@ function getOptions() {
 }
 
 function calcTotal() {
-	var totalPrice = (((getDestinationPrice() + getAccPrice() + getOptions()) * getVacLength()) * getRooms()) * membershipRebate();
+	var totalPrice = ((((getDestinationPrice() + getAccPrice() + getOptions()) * getVacLength()) * getRooms()) *getSeason()) * membershipRebate();
 	var divTotPrice = document.getElementById('totalPrice');
 	divTotPrice.style.display='block';
 	document.getElementById('totalPrice').innerHTML = "Reisen din vil koste kr " + totalPrice + ",-";

@@ -61,9 +61,9 @@
 						<h6>Når ønsker du å reise?</h6>
 						<!-- Choose departure date by writing the date into 3 seperate text boxes -->
 						<p><label class="labels" for="fromDay">Fra dato:</label>
-							<input type="text" id="fromDay" name="Fra_dag" class="dates" value="dd" onfocus="this.select();"/>
-							<input type="text" id="fromMonth" name="Fra_måned" class="dates" value="mm" onfocus="this.select();"/>
-							<input type="text" id="fromYear" name="Fra_år" class="dates" value="åå" onfocus="this.select();"/>
+							<input type="text" id="fromDay" name="Fra_dag" class="dates" value="dd" onfocus="this.select();" onchange="calcTotal()" />
+							<input type="text" id="fromMonth" name="Fra_måned" class="dates" value="mm" onfocus="this.select();" onchange="calcTotal()" />
+							<input type="text" id="fromYear" name="Fra_år" class="dates" value="åå" onfocus="this.select();" onchange="calcTotal()" />
 							<span class="infotext">Eksempel: 25. juli 2015 blir:</span>
 							<input type="text" id="staticDay" class="dates" value="25" readonly />
 							<input type="text" id="staticMonth" class="dates" value="7" readonly />
