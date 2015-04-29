@@ -1,13 +1,13 @@
 #leftPanel {
+	position: absolute;
 	width: 700px;
-	float: left;
-	margin-left: 20px;
+	margin-left: 33px;
 }
 
 #rightPanel {
-	margin-right: 20px;
+	margin-left: 766px;
+	position: absolute;
 	width: 400px;
-	float: right;
 }
 
 #description {
@@ -20,8 +20,9 @@
 
 #text {
 	margin-left: 200px;
-	width: 460px;
+	width: auto;
 	padding-left: 15px;
+	padding-right: 15px;
 	text-align: left;
 }
 
