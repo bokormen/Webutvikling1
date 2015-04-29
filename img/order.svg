@@ -2,7 +2,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="62" height="22">
     <defs>
         <style>
-            rect:hover { fill: darkorange; }
+            svg g rect:hover { fill: darkorange; }
+            svg g text:hover > svg g rect { fill: darkorange; }
         </style>
     </defs>
     <g id="orderButton">

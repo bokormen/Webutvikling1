@@ -127,7 +127,12 @@ a:active
 	cursor: pointer;
 	text-align: center;
 	text-decoration: none;
+	font-size: 11px;
 	color: black;
 	background: orange;
 	border-radius: 7px;
+}
+
+.searchButton:hover {
+	background: darkorange;
 }
