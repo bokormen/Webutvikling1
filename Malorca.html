@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+	<link type="text/css" rel="stylesheet" href="css/layout.css"/>
+	<meta charset="UTF-8">
+	<!--  jQuery downloaded from google api's -->
+	<script src="javascript/jquery.min.js"></script>
+	<!-- Script to change logo opacity when mouse hovers over it -->
+	<script src="javascript/logo.js"></script>
+	<title>Sol & Varme</title>
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+</head>
+<body>
+	<!--	The wrapper to contain the page -->
+	<div id="wrapper">
+
+		<!--	The header with the logo anchored to the front page -->
+		<div id="header">
+			<a href="index.html">
+				<img src="img/sologvarmelogo.png" alt="Sol og Varme Logo" class="logo"/>
+			</a>
+		</div>
+
+		<!--	The main menu. We dont have to change every page if we make
+				change to links. Therefore we put the menus in iframes -->
+		<div id="menu">
+			<!--	Scrolling attribute set since css styling wont work with IE  -->
+			<iframe src="menu.html" class="iframes" scrolling="no"></iframe>
+		</div>
+
+		<!--	Page main content is displayed inside this div -->
+		<div id="content">
+			<p>content here!</p>
+		</div>
+
+		<!--	Footer div to contain an iframe for the footer menu -->
+		<div id="footer">
+			<!--	Another iframe for the footer menu -->
+			<iframe src="footermenu.html" class="iframes" scrolling="no"></iframe>
+		</div>
+	</div>
+</body>
+</html>
