@@ -1,13 +1,7 @@
 <?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="62" height="22">
-    <defs>
-        <style>
-            svg g rect:hover { fill: darkorange; }
-            svg g text:hover > svg g rect { fill: darkorange; }
-        </style>
-    </defs>
-    <g id="orderButton">
-        <rect x="0" y="0" width="60" height="20" rx="6" ry="6" fill="orange" stroke="black" stroke-width="1" />
-        <text x="6" y="16" fill="black" font-family="Verdana" font-size="16">Bestill</text>
-    </g>
+	<g id="orderButton">
+		<rect x="0" y="0" width="60" height="20" rx="6" ry="6" fill="orange" stroke="black" stroke-width="1" />
+		<text x="6" y="16" fill="black" font-family="Verdana" font-size="16">Bestill</text>
+	</g>
 </svg>
