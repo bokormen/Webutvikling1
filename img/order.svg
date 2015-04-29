@@ -2,8 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="62" height="22">
     <defs>
         <style>
-            * { fill: #ddd; }
-            :hover { fill: cornflowerblue; }
+            rect:hover { fill: darkorange; }
         </style>
     </defs>
     <g id="orderButton">
