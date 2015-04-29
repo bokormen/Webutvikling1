@@ -40,30 +40,56 @@
 				<p>? eller &destination=Somewhere</p>
 				<p>? eller &accomodation=Hotell (eller Leilighet)</p>
 				<p>Kan putte så mye ting man vil i url i utgangspunktet, må bare vite hva man skal hente ut</p>
-				<fieldset>
+				<fieldset name="orderdata">
 					<legend>Vennligst fullfør ordren din</legend>
 					<form id="newOrder">
+						<fieldset class="nested" name="member">
+						<legend>Er du medlem?</legend>
+							<p class="centered">
+							<label for="optYes">Ja</label><input type="radio" id="optYes" name="optYesNo"/>
+							<label class="needDistanceLeft" for="optNo">Nei</label><input type="radio" id="optNo" name="optYesNo"/>
+							</p>
+						</fieldset>
+						<p><label class="labels" for"accomodation">Overnatting:</label> </p>
+							<select id="accomodation" class="choices" name="Overnatting">
+								<option>velg</option>
+								<option>Hotell</option>
+								<option>Leilighet</option>
+								<script type="text/javascript" src="javascript/length.js"></script>
+							</select>
+						</p>
+						<p><label class="labels" for"roomSize">Romstørrelse:</label> </p>
+							<select id="roomSize" class="choices" name="Romstørrelse">
+								<option>velg</option>
+								<option>Enkeltrom</option>
+								<option>Dobbeltrom</option>
+								<option>Suite</option>
+								<script type="text/javascript" src="javascript/length.js"></script>
+							</select>
+						</p>
 						<p><label class="labels" for="fromDay">Fra dato:</label>
 							<input type="text" id="fromDay" name="Fra_dag" class="dates" value="dd" onfocus="this.select();"/>
 							<input type="text" id="fromMonth" name="Fra_måned" class="dates" value="mm" onfocus="this.select();"/>
 							<input type="text" id="fromYear" name="Fra_år" class="dates" value="åå" onfocus="this.select();"/>
-							<span class="infotext">Eksempel, 25. juli 2015 blir</span>
+							<span class="infotext">Eksempel: 25. juli 2015 blir:</span>
 							<input type="text" id="staticDay" class="dates" value="25" readonly />
 							<input type="text" id="staticMonth" class="dates" value="7" readonly />
 							<input type="text" id="staticYear" class="dates" value="15" readonly />
 						</p>
-						<p><label class="labels" for="howManyWeeks">Antall dager:</label>
-							<select id="howManyWeeks" name="Antall_reisedager">
+						<p><label class="labels" for="howManyWeeks">Antall uker:</label>
+							<select id="howManyWeeks" class="choices" name="Antall_reisedager">
 								<option>velg</option>
-								<!-- kjører nå ett script for å legge til reisedager i nedtrekkslista -->
+								<!-- kjører nå ett script for å legge til uker i nedtrekkslista -->
 								<script type="text/javascript" src="javascript/length.js"></script>
 							</select>
 							<span class="infotext">Vi tilbyr reiser fra 1 til 4 uker.</span>
 						</p>
-						<p>Er du medlem?
-							<label class="radButton" for="optYes">Ja</label><input type="radio" id="optYes" class="radio" name="optYesNo"/>
-							<label class="radButton" for="optNo">Nei</label><input type="radio" id="optNo" class="radio" name="optYesNo"/>
-						</p>
+						<fieldset class="nested" name="extras">
+							<legend>Velstand</legend>
+							<p><label class="labels" for="dinner">Middag på hotellet:</label><input type="checkbox" id="dinner" /></p>
+							<p><label class="labels" for="wifi">Wi-Fi/ Internet:</label><input type="checkbox" id="wifir" /></p>
+							<p><label class="labels" for="housekeeping">Vask av leilighet:</label><input type="checkbox" id="housekeeping" /></p>
+						</fieldset>
 					</form>
 				</fieldset>
 			</div>

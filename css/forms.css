@@ -4,21 +4,39 @@
 	width: 50%;
 	text-align: left;
 }
-/*
-#orders p {
-	vertical-align: center;
-}
-*/
+
 fieldset {
 	float: none;
 	border: 1px solid black;
 	margin: 2px 2px 2px 2px;
+}
+
+#orders.fieldset {
+	width: 550px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
-#orders.fieldset {
-	width: 99%;
+fieldset.nested {
+	width: 275px;
+	margin: 20px auto 20px;
+	padding-top: 8px;
+	border: 0;
+}
+
+p {
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+p.centered {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.needDistanceLeft {
+	margin-left: 20px;
 }
 
 /* Class for the labels to be used in front of text boxes in the order form */
@@ -26,30 +44,32 @@ fieldset {
 	width: 10em;
 	float: left;
 	text-align: right;
-	margin-right: 1em;
+	margin-right: 0.5em;
 	display: block;
-	height: 2em;
 }
 
 .input {
-	height: 1.4em;
-	margin-bottom: 5px;
+	height: 20px;
+	width: 150px;
 }
 
-/*
-legend {
-	padding-left: 50px;
+input[type="radio"] {
+	margin-left: 8px;
 }
-*/
+
+.choices {
+	width: 95px;
+	height: 20px;
+}
+
+.dates {
+	width: 25px;
+	height: 15px;
+	text-align: center;
+}
 
 .infotext {
 	margin-left: 10px;
-}
-
-p.centered {
-	text-align: center;
-	padding-top: 5px;
-	padding-bottom: 5px;
 }
 
 .button {
@@ -65,16 +85,4 @@ p.centered {
 
 .button:active {
 	background: #BBBBBB;
-}
-
-.dates {
-	width: 25px;
-	text-align: center;
-	margin-bottom: 5px;
-}
-
-.labRad {
-	text-align: right;
-	display: inline-block;
-	width: 55px;
 }
