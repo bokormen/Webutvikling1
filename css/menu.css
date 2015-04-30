@@ -1,4 +1,4 @@
-/*Set margins and font size for this div*/
+/*Set margins and font size for this div, this div contains the content of the menu bar*/
 #menuLineContent {
 	margin-left: 7px;
 	margin-right: 7px;
@@ -15,79 +15,61 @@
 	float: right;
 }
 
-/*hides submenu items */
+/*hides sub-menu items */
 nav ul ul {
 	display: none;
 }
 
-/*Displays submeny items when hovering over parent list item*/
+/*Displays sub-menu items when hovering over parent list item*/
 nav ul li:hover > ul {
 	display: block;
 
 }
 
-/**/
+/*Removes the "radiobutton" from the list element, and allows the list elements to be placed horizontally */
 nav ul {
 	list-style: none;
 	position: relative;
 	display: inline-table;
 }
 
-/*
-nav ul:after {
-	content: "";
-	clear: both;
-	display: block;
-}*/
-
-/**/
+/*Keeps the list items to the left, and puts them in front of content with lower z-index*/
 nav ul li {
 	float: left;
 	z-index: 10;
 }
 
-/**/
+/*Changes background-color when mouse is hold over a list item in the menu*/
 nav ul li:hover {
 	background: #FF7D00;
 	color: #F0F0F0;
 }
 
-/**/
-nav ul li:hover a {
-	/*color: #fff;*/
+/*changes text color when mouse is hold over a link in the menu*/
+nav ul li a:hover {
+	color: #F0F0F0;
 }
 
-/**/
-nav ul li a {
-	/*display: block; padding: 25px 40px;
-	color: #757575; text-decoration: none;*/
-}
-
-/**/
+/*places the sub-menu*/
 nav ul ul {
 	position: absolute;
 	top: 100%;
 }
 
-/**/
+/*places the list items of the sub-menu horizontally and gives them background-color*/
 nav ul ul li {
 	float: none;
 	position: relative;
 	background: orange;
 }
 
-/**/
-nav ul ul li a {
-/*	padding: 15px 40px;
-	color: #fff;*/
-}
-
-/**/
+/*changes the background-color and text color when a mouse hovers over the sub-menu list item*/
 nav ul ul li a:hover {
 	background: #FF7D00;
 	color: #F0F0F0;
 }
 
+/*removes link attributes from all documents where menu.css is linked, makes the link text "bold", makes the link dispay as a block element and gives the link some space on both sides*/
 a
 {
 	text-decoration: none;
@@ -97,27 +79,19 @@ a
 	padding-right: 5px;
 }
 
+/*makes all links black*/
 a:link
 {
 	color: #202020;
 }
 
+/*makes shure visited links also stays black*/
 a:visited
 {
 	color: #202020;;
 }
 
-a:hover
-{
-	color: #F0F0F0;
-}
-
-a:active
-{
-	color: #FFFFFF;
-}
-
-/**/
+/*sets the space around the button, how the text should look like, makes the button orange, and gives the button rounded corners*/
 .searchButton {
 	padding: 0px 7px 0px;
 	margin: 0px;
@@ -131,7 +105,7 @@ a:active
 	border-radius: 5px;
 }
 
-/**/
+/*changes color of the button when mouse hovers over*/
 .searchButton:hover {
 	background: darkorange;
 }
