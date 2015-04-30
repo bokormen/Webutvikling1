@@ -53,10 +53,12 @@ body {
 	background-color: #FFFFFF;
 	padding: 5px; /* Some space from edge to content */
 	min-height: 500px;
-	/*height: 1500px;*/ /* Bare for å teste scrollinga, endre om du vil */
+	/*height: 1500px;*/
+	/* Bare for å teste scrollinga, endre om du vil */
+	opacity: 0.3;
+	/*	The footer div, bottom of web page */
 }
 
-/*	The footer div, bottom of web page */
 #footer {
 	width: 100%;
 	background-color: orange; /* for testing */
@@ -80,11 +82,13 @@ body {
 .panel {
 	margin-top: 10px;
 	/*background: gainsboro;*/
+	background-color: white;
 	border-radius: 10px;
 	border: 1px solid lightslategrey;
 	padding: 10px;
 	text-align: center;
 	box-shadow: 2px 2px 2px #888888;
+	opacity: 1;
 }
 
 img.logo {

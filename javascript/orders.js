@@ -2,7 +2,7 @@
 Run two functions on page load to check if destination is set.
 If so the calcTotal() script will start calculating the price
 */
-window.onload = function() { preselectItem(getElement("destination")) || calcTotal() };
+window.onload = function() { preselectItem(getElement("destination")) || preselectRadio(getElement("accommodation")) || calcTotal() };
 
 /*
 Function to retrieve elements from URL substring
@@ -58,6 +58,11 @@ function preselectItem(destination) {
 	}
 }
 
+
+function preselectRadio(accommodation) {
+	var buttons = document.getElementsByName("optionAccommodation");
+	alert(accommodation);
+}
 
 
 
