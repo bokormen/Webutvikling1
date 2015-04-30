@@ -17,12 +17,17 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	float: right;
 }
 
+nav {
+	z-index: 10;
+}
+
 nav ul ul {
 	display: none;
 }
 
 nav ul li:hover > ul {
 	display: block;
+
 }
 
 
@@ -46,6 +51,7 @@ nav ul:after {
 
 nav ul li {
 	float: left;
+	z-index: 10;
 }
 nav ul li:hover {
 /*	background: #4b545f;
