@@ -13,17 +13,14 @@
 	width: 400px;
 }
 
+#description {
+	text-align: left;
+}
+
 #picture {
 	float: left;
 	width: 200px;
-}
-
-#text {
-	margin-left: 200px;
-	width: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-	text-align: left;
+	margin-right: 15px;
 }
 
 /*centers the TripAdvisor widget*/

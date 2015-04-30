@@ -1,0 +1,24 @@
+.description {
+	text-align: left;
+}
+
+.picture {
+	float: left;
+	width: 200px;
+	margin-right: 15px;
+}
+
+.buttons {
+	position: relative;
+	text-align: right;
+}
+
+.buttons ul {
+	position: relative;
+	list-style: none;
+	display: inline-table;
+}
+
+.buttons ul li {
+	float: left;
+}
