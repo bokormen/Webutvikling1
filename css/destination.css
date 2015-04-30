@@ -1,12 +1,15 @@
 #leftPanel {
-	position: absolute;
+	/*position: absolute;*/
+	float: left;
 	width: 700px;
 	margin-left: 33px;
 }
 
 #rightPanel {
-	margin-left: 766px;
-	position: absolute;
+	/*margin-left: 766px;
+	position: absolute;*/
+	float: right;
+	margin-right: 34px;
 	width: 400px;
 }
 
@@ -28,15 +31,5 @@
 	width: 300px;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.panel {
-	margin-top: 10px;
-	background: gainsboro;
-	border-radius: 10px;
-	border: 1px solid lightslategrey;
-	padding: 10px;
-	text-align: center;
-	box-shadow: 2px 2px 2px #888888;
 }
 

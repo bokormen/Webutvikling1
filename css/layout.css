@@ -52,7 +52,8 @@ body {
 	width: 1190px; /* 1190 + 5 padding both sides = 1200 */
 	background-color: #FFFFFF;
 	padding: 5px; /* Some space from edge to content */
-	height: 1500px; /* Bare for å teste scrollinga, endre om du vil */
+	min-height: 500px;
+	/*height: 1500px;*/ /* Bare for å teste scrollinga, endre om du vil */
 }
 
 /*	The footer div, bottom of web page */
@@ -73,6 +74,17 @@ body {
 	height: 100%;
 	border: none;
 	overflow: hidden; /* no scrolling, not reliable */
+}
+
+/*	class to create a panel looking div*/
+.panel {
+	margin-top: 10px;
+	/*background: gainsboro;*/
+	border-radius: 10px;
+	border: 1px solid lightslategrey;
+	padding: 10px;
+	text-align: center;
+	box-shadow: 2px 2px 2px #888888;
 }
 
 img.logo {

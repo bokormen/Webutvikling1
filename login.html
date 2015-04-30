@@ -54,18 +54,21 @@
 
 	<!--	Page main content is displayed inside this div -->
 	<div id="content">
-		<fieldset>
-			<legend>Logg inn med brukeren din</legend>
-			<form id="loginField">
-				<p><label class="labels" for="userName">Brukernavn:</label><input type="text" id="userName" name="Brukernavn" class="input"/><span class="infotext">Brukernavnet er din e-postadresse.</span></p>
-				<p><label class="labels" for="password">Passord:</label><input type="password" id="password" name="Passord" class="input"/></p>
-				<p class="centered">Har du ikke registrert deg? <a href="register.html" target="_new">Registrer deg her!</a></p>
-				<p class="centered">
-					<input class="button" type="submit" id="submit" value="Logg inn"/>
-					<input class="button" type="reset" id="reset" value="Nullstill"/>
-				</p>
-			</form>
-		</fieldset>
+		<div class="panel">
+			<fieldset>
+				<legend>Logg inn med brukeren din</legend>
+				<form id="loginField">
+					<p><label class="labels" for="userName">Brukernavn:</label><input type="text" id="userName" name="Brukernavn" class="input"/><span class="infotext">Brukernavnet er din e-postadresse.</span></p>
+					<p><label class="labels" for="password">Passord:</label><input type="password" id="password" name="Passord" class="input"/></p>
+					<p class="centered">Har du ikke registrert deg? <a href="register.html" target="_new">Registrer deg her!</a></p>
+					<p class="centered">
+						<input class="button" type="submit" id="submit" value="Logg inn"/>
+						<input class="button" type="reset" id="reset" value="Nullstill"/>
+					</p>
+				</form>
+			</fieldset>
+		</div>
+		<div style="clear: both;"></div>
 	</div>
 
 	<!--	Footer div to contain an iframe for the footer menu -->

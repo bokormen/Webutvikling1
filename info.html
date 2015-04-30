@@ -8,47 +8,48 @@
 	<title>Sol & Varme</title>
 </head>
 <body>
-	<!--	The wrapper to contain the page -->
-	<div id="wrapper">
+<!--	The wrapper to contain the page -->
+<div id="wrapper">
 
-		<!--	The header with the logo anchored to the front page -->
-		<div id="header">
-			<a href="index.html">
-				<img src="img/sologvarmelogo.png" alt="Sol og Varme Logo" />
-			</a>
-		</div>
+	<!--	The header with the logo anchored to the front page -->
+	<div id="header">
+		<a href="index.html">
+			<img src="img/sologvarmelogo.png" alt="Sol og Varme Logo" />
+		</a>
+	</div>
 
-		<!--	The main menu. We dont have to change every page if we make
-				change to links. Therefore we put the menues in iframes -->
-		<div id="menu">
-			<div id="menuLineContent">
-				<div id="menuContent">
-					<nav>
-						<ul>
-							<li><a href="#">Destinasjoner</a>
-								<ul>
-									<li><a href="Malorca.html">Malorca</a></li>
-									<li><a href="Ibiza.html">Ibiza</a></li>
-									<li><a href="Kypros.html">Kypros</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Tilbud</a></li>
-							<li><a href="info.html">Reiseinfo</a></li>
-							<li><a href="login.html">Mine Sider</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div id="searchContent">
-					<form id="searchForm">
-						<input type="text" name="searchString" placeholder="Søk etter destinasjon her">
-						<input type="submit" value="Søk" class="searchButton">
-					</form>
-				</div>
+	<!--	The main menu. We dont have to change every page if we make
+			change to links. Therefore we put the menues in iframes -->
+	<div id="menu">
+		<div id="menuLineContent">
+			<div id="menuContent">
+				<nav>
+					<ul>
+						<li><a href="#">Destinasjoner</a>
+							<ul>
+								<li><a href="Malorca.html">Malorca</a></li>
+								<li><a href="Ibiza.html">Ibiza</a></li>
+								<li><a href="Kypros.html">Kypros</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Tilbud</a></li>
+						<li><a href="info.html">Reiseinfo</a></li>
+						<li><a href="login.html">Mine Sider</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div id="searchContent">
+				<form id="searchForm">
+					<input type="text" name="searchString" placeholder="Søk etter destinasjon her">
+					<input type="submit" value="Søk" class="searchButton">
+				</form>
 			</div>
 		</div>
+	</div>
 
-		<!--	Page main content is displayed inside this div -->
-		<div id="content">
+	<!--	Page main content is displayed inside this div -->
+	<div id="content">
+		<div class="panel">
 			<h1>BAZON</h1>
 			<p>Bacon ipsum dolor amet pariatur swine tempor, labore bacon qui veniam in chuck laborum officia flank t-bone pork loin. Ut tail aliqua leberkas nulla prosciutto incididunt sunt mollit commodo venison shank ullamco. Jerky strip steak exercitation sed esse. Prosciutto tri-tip ground round anim ad kielbasa fatback spare ribs short loin. Capicola salami pork chop pork sausage proident, cow ipsum ground round excepteur aliquip shank short ribs aliqua andouille.</p>
 			<h2>MORE BAZON</h2>
@@ -58,12 +59,14 @@
 			<p>Picanha in mollit ham hock drumstick short ribs consectetur cupidatat porchetta magna reprehenderit nulla fatback. Frankfurter nulla velit tongue, leberkas est mollit pancetta exercitation in. Leberkas pig ea jerky, ground round strip steak incididunt labore exercitation beef. Pork chop kevin pariatur, boudin culpa sint tongue bresaola commodo bacon ullamco.</p>
 			<p>Non elit do, pork loin chicken in velit leberkas ut pork belly shankle jerky. Hamburger shoulder filet mignon bacon shank tenderloin occaecat. Incididunt frankfurter sausage, est ipsum boudin turducken ham hock pork chop doner. Beef ribs corned beef magna incididunt nulla ham hock aliquip spare ribs laborum excepteur est ex enim pastrami proident. Reprehenderit pig labore, voluptate ut capicola boudin ut laboris dolore sirloin. Bacon rump meatball pig prosciutto venison, aute alcatra ex culpa consequat. Sunt prosciutto non kevin leberkas t-bone, qui veniam do corned beef cupidatat culpa picanha.</p>
 		</div>
+		<div style="clear: both;"></div>
+	</div>
 
-		<!--	Footer div to contain an iframe for the footer menu -->
-		<div id="footer">
-			<!--	Another iframe for the footer menu -->
-			<iframe src="footermenu.html" class="iframes" scrolling="no"></iframe>
-		</div>
+	<!--	Footer div to contain an iframe for the footer menu -->
+	<div id="footer">
+		<!--	Another iframe for the footer menu -->
+		<iframe src="footermenu.html" class="iframes" scrolling="no"></iframe>
+	</div>
 </div>
 </body>
 </html>
