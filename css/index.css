@@ -1,24 +1,28 @@
+/*aligns text in this div to the left*/
 .description {
 	text-align: left;
 }
 
+/* places rhe picture to the left, sets the with, and gives the picture some space to the right*/
 .picture {
 	float: left;
 	width: 200px;
 	margin-right: 15px;
 }
 
+/*places content in this div to the right*/
 .buttons {
 	position: relative;
 	text-align: right;
 }
 
+/*Removes the "radiobutton" from the list element, and allows the list elements to be placed horizontally */
 .buttons ul {
 	position: relative;
 	list-style: none;
 	display: inline-table;
 }
-
+/*the list elements horizontally with the first element farthest to the left*/
 .buttons ul li {
 	float: left;
 }
