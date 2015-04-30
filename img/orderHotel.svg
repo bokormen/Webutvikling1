@@ -1,8 +1,12 @@
 <?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="62" height="29">
-	<g id="orderButton">
-		<rect x="1" y="1" width="60" height="27" rx="6" ry="6" fill="orange" stroke="black" stroke-width="1" />
-		<text x="6" y="16" fill="black" font-family="Verdana" font-size="16">Bestill</text>
-		<text x="6" y="25" fill="black" font-family="Verdana" font-size="9">m/Hotell</text>
+    <!--groups content relevant to the button-->
+    <g id="orderButton">
+        <!--code drawing a rectangle with rounded corners-->
+        <rect x="1" y="1" width="60" height="27" rx="6" ry="6" fill="orange" stroke="black" stroke-width="1" />
+        <!--code draving text-->
+        <text x="6" y="16" fill="black" font-family="Verdana" font-size="16">Bestill</text>
+        <!--code drawing smaller text-->
+        <text x="6" y="25" fill="black" font-family="Verdana" font-size="9">m/Hotell</text>
 	</g>
 </svg>
