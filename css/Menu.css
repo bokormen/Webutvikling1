@@ -15,13 +15,6 @@
 	float: right;
 }
 
-/*centers the TripAdvisor widget*/
-#TA_cdsdmo27 {
-	width: 300px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 /*hides submenu items */
 nav ul ul {
 	display: none;

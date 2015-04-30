@@ -10,9 +10,6 @@
 	width: 400px;
 }
 
-#description {
-}
-
 #picture {
 	float: left;
 	width: 200px;
@@ -24,6 +21,13 @@
 	padding-left: 15px;
 	padding-right: 15px;
 	text-align: left;
+}
+
+/*centers the TripAdvisor widget*/
+#TA_cdsdmo27, #TA_cdsdmo422, #TA_cdsdmo684 {
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .panel {
