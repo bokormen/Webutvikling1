@@ -1,7 +1,13 @@
-window.onload = function() { calcTotal() };
+/*
+Run two functions on page load to check if destination is set.
+If so the calcTotal() script will start calculating the price
+*/
+window.onload = function() { preselectItem(getElement("destination")) || calcTotal() };
 
-// function to retrieve elements from URL substring
-// We will use this to pre-fill some of the order form boxes
+/*
+Function to retrieve elements from URL substring
+We will use this to pre-fill some of the order form boxesS
+*/
 function getElement(element) {
 	// Get everything after the ? in the current URL
 	var substring = window.location.search.substring(1);
@@ -17,16 +23,49 @@ function getElement(element) {
 		}
 	}
 	// If nothing matches the query return boolean false
-	return(false);
+	return false;
 }
 
+/*
+Functions to hide and show div elements based on input from user.
+The functions recieves an argument that corresponds to the ID of the
+element that should be hidden or shown. We use it to show and hide DIVs.
+ */
+
+// The function to show (reveal) an element.
 function showOption(show){
 	document.getElementById(show).style.display='block';
 }
 
+// The function to hide an element.
 function hideOption(hide){
 	document.getElementById(hide).style.display='none';
 }
+
+
+
+
+//
+function preselectItem(destination) {
+	var dropDown = document.getElementById("finalDest");
+	// Loop through all the items
+	for (i = 0; i < dropDown.options.length; i++) {
+		if (dropDown.options[i].value == destination) {
+			// Item is found. Set its selected property, and exit the loop
+			dropDown.options[i].selected = true;
+			break;
+		}
+	}
+}
+
+
+
+
+/*
+
+Price calculating functions for the ordering form.
+
+*/
 
 var destinationPrices = [];
 destinationPrices["Kypros"]=3000;
@@ -70,8 +109,8 @@ function getSeason() {
 
 function getDestinationPrice () {
 	var destPrice = 0;
-	var dest = getElement('destination');
-	for (i in destinationPrices) {
+	var dest = document.getElementById('finalDest').value;
+	for (var i in destinationPrices) {
 		if (i == dest) {
 			destPrice = destinationPrices[i];
 			break;
@@ -89,14 +128,12 @@ function membershipRebate() {
 }
 
 function getVacLength() {
-	var length = 0;
-	length = document.getElementById("howManyWeeks").value;
-	return length;
+	return document.getElementById("howManyWeeks").value;
 }
 
 function getRooms() {
 	var people = 1;
-	var input = document.getElementById("travelers").value;
+	var input = document.getElementById("rooms").value;
 	if (parseFloat(input) == parseInt(input) && !isNaN(input)) {
 		people = input;
 	}
@@ -147,3 +184,71 @@ function calcTotal() {
 	document.getElementById('totalPrice').innerHTML = "Reisen din vil koste kr " + totalPrice + ",-";
 }
 
+/*
+
+All math/ price calculations functions done.
+
+ */
+
+
+
+
+/*
+Field validation functions, used to be sure we post all the neccessary
+data from the form. If all data is valid you are redirected to the
+order confirmation page.
+ */
+
+
+// hotellrom
+
+function checkStuff() {
+	var inputDay = document.getElementById("fromDay").value;
+	var inputMonth = document.getElementById("fromMonth").value;
+	var inputYear = document.getElementById("fromYear").value;
+	var inputRooms = document.getElementById("rooms").value;
+	var inputHotel = document.getElementById("roomSize").value;
+	var validation = [];
+	validation["fromDay"]=false;
+	validation["fromMonth"]=false;
+	validation["fromYear"]=false;
+	validation["rooms"]=false;
+	validation["roomSize"]=false;
+	if (parseFloat(inputDay) == parseInt(inputDay) && !isNaN(inputDay)) {
+		var day = inputDay;
+	}
+	if (parseFloat(inputMonth) == parseInt(inputMonth) && !isNaN(inputMonth)) {
+		var month = inputMonth;
+	}
+	if (parseFloat(inputYear) == parseInt(inputYear) && !isNaN(inputYear)) {
+		var year = inputYear;
+	}
+	if (parseFloat(inputRooms) == parseInt(inputRooms) && !isNaN(inputRooms)) {
+		var rooms = inputRooms;
+	}
+	/*if (parseFloat(rooms) == parseInt(inputRooms) && !isNaN(inputRooms)) {
+		var rooms = inputYear;
+	}*/
+	if (day >= 1 && day <= 32) {
+		validation["fromDay"]=true;
+	}
+	if (month >= 1 && month <= 12) {
+		validation["fromMonth"]=true;
+	}
+	if (year >= 15 && year  <= 17) {
+		validation["fromYear"]=true;
+	}
+	if (rooms >= 1 && rooms  <= 10) {
+		validation["rooms"]=true;
+	}
+	if (inputHotel !== "velg") {
+		validation["roomSize"]=true;
+	}
+	for (i in validation) {
+		if (validation[i] == false) {
+			window.document.forms["newOrder"][i].focus();
+			return false;
+		}
+	}
+	return true;
+}

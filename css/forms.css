@@ -1,6 +1,8 @@
+/*
+All DIVs in this document are contained within the container DIV in layout.css
+*/
 
-
-/* Div that contains the order form */
+/* Div that contains the main part of the order-form */
 #orders {
 	width: 49%;
 	text-align: left;
@@ -14,6 +16,7 @@
 	text-align: left;
 	height: 400px;
 	position: absolute;
+	margin-top: 60;
 	margin-left: 600px;
 }
 
@@ -74,7 +77,19 @@
 }
 
 #totalPrice {
+	position: relative;
 	background-color: orange;
+	margin: 10px auto 10px;
+}
+
+#buttons {
+	position: relative;
+	margin: 10px auto 10px;
+	text-align: center;
+}
+
+#finalDest {
+	margin-left: 10px;
 }
 
 fieldset {
@@ -141,16 +156,21 @@ input[type="radio"] {
 }
 
 .button {
+	margin: 0 10px 0 10px;
 	height: 2em;
 	width: 8em;
-	background: #FFFFFF;
+	background: orange;
 	border: 1px solid black;
 }
 
 .button:hover {
-	background: orange;
+	background: orangered;
 }
 
 .button:active {
-	background: #BBBBBB;
+	background: red;
+}
+
+h1 {
+	text-align: center;;
 }
