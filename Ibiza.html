@@ -24,10 +24,8 @@
 		</a>
 	</div>
 
-	<!--	The main menu. We dont have to change every page if we make
-			change to links. Therefore we put the menus in iframes -->
+	<!--	The main menu. see index.html for better commenting of this div -->
 	<div id="menu">
-		<!--	Scrolling attribute set since css styling wont work with IE  -->
 		<div id="menuLineContent">
 			<div id="menuContent">
 				<nav>
@@ -56,42 +54,50 @@
 
 	<!--	Page main content is displayed inside this div -->
 	<div id="content">
-
+		<!--a div placing content to the left in content area-->
 		<div id="leftPanel">
-
+			<!--a div containing text and picture describing the destination and styled as a panel-->
 			<div id="description" class="panel">
+				<!--div placing picture-->
 				<div id="picture">
 					<img src="img/ibiza.jpg">
 				</div>
+				<!--text witch wraps around the div containing a picture-->
 				<h2>Ibiza</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ligula orci, feugiat non consectetur at, auctor sit amet ante. Mauris id sapien a risus consectetur bibendum. Donec nec nisl in nisi accumsan auctor sed nec orci. Maecenas ligula sapien, tristique sit amet ultricies interdum, accumsan eget tortor. Sed cursus aliquam imperdiet. Nam malesuada in est eget laoreet. Ut ultricies arcu tristique tortor venenatis ornare. Duis euismod bibendum massa sed tempor. Vivamus convallis eros nec lectus faucibus tristique. Aliquam convallis ex nisl, id accumsan lorem molestie eu. Vestibulum rutrum euismod quam, nec ultricies tortor commodo eu. Donec eleifend vehicula neque a scelerisque. Sed in tellus nulla. </p>
 				<br>
 				<p>Maecenas vitae leo eget enim egestas sagittis non ac tellus. Suspendisse vehicula odio eros, sit amet iaculis elit ornare accumsan. Donec eu hendrerit nisl. Fusce a quam sollicitudin, placerat magna eu, sagittis diam. Phasellus enim nunc, consectetur sit amet quam cursus, pharetra pharetra purus. Ut venenatis enim facilisis nulla placerat fermentum. Suspendisse potenti. Morbi tempor, eros non pellentesque bibendum, risus justo rutrum sem, id pellentesque lectus odio eget nisi. Proin molestie nulla nec ligula facilisis, vel ultricies erat elementum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris turpis leo, dapibus eu sapien sed, vehicula cursus nunc. Donec ac volutpat eros. Nulla ultricies vestibulum sapien ut finibus. Cras in faucibus tellus. Nunc vitae nisl convallis, egestas ante vitae, molestie erat. Ut vel efficitur elit, vitae faucibus dui.</p>
 			</div>
 
+			<!--div containing content from youtube and styled like a panel-->
 			<div id="youtube" class="panel">
 				<iframe width="640" height="480" src="https://www.youtube.com/embed/ocrQOoLPlgQ" frameborder="0" allowfullscreen></iframe>
 			</div>
 
+			<!--div containing content from google maps and styled like a panel-->
 			<div id="google maps" class="panel">
 				<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=ibiza&key=AIzaSyDuO-TD-FrFh0E3-6C2W70b_SWui3fogPc"></iframe>
 			</div>
 
 		</div>
 
+		<!--a div placing content to the right in content area-->
 		<div id="rightPanel">
 
-
+			<!--div containing buttons which links to order.html and sends variables which is used to fill the schema with content-->
 			<div id="order" class="panel">
 				<p>På Ibiza er har vi både hoteller og leiligheter tilgjengelig for overnatting</p>
 				<br>
 				<a href="order.html?destination=Ibiza&accommodation=Hotell"><img src="img/orderHotel.svg"></a>
 				<a href="order.html?destination=Ibiza&accommodation=Leilighet"><img src="img/orderApartment.svg"></a>
 			</div>
+
+			<!--div containing content from yr.no and styled like a panel-->
 			<div id="yr" class="panel">
 				<script src="http://www.yr.no/sted/Spania/Balearene/Ibiza~6356034/ekstern_boks_liten.js"></script><noscript><a href="http://www.yr.no/sted/Spania/Balearene/Ibiza~6356034/">yr.no: Værvarsel for Ibiza</a></noscript>
 			</div>
 
+			<!--div containing content from tripadvisor and styled like a panel-->
 			<div id="tripadvisor" class="panel">
 				<div id="TA_cdsdmo422" class="TA_cdsdmo">
 					<ul id="V3lfzGlxe0O" class="TA_links NGygqFMLk">
@@ -104,6 +110,7 @@
 			</div>
 
 		</div>
+		<!--hack making floating divs take up space in the containing div-->
 		<div style="clear: both;"></div>
 	</div>
 
