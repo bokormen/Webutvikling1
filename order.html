@@ -11,6 +11,7 @@
 	<script src="javascript/logo.js"></script>
 	<!--	Scripts for the order page -->
 	<script src="javascript/orders.js"></script>
+	<script src="javascript/validate.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 			start();
@@ -64,102 +65,96 @@
 		<div class="panel">
 			<h1>Her kan du bestille reisen din!</h1>
 			<form id="newOrder" onsubmit="return checkStuff()" action="http://www.aitel.hist.no/fag/ppi/prosjekt/behandle.php" method="post">
-				<div id="orders">
+				<div id="orders" class="panel">
 					<h5 style="display:inline">Din valgte destinasjon er:</h5>
-					<select id="finalDest" class="choices" name="Travel_destination" onchange="calcTotal()">
+					<label for="finalDest"></label><select id="finalDest" class="choices" name="Travel_destination" onchange="calcTotal()">
 						<option>velg</option>
 						<option>Ibiza</option>
 						<option>Malorca</option>
 						<option>Kypros</option>
 					</select>
+					<div id="radioChoices">
+						<div id="checkMember">
+							<h6>Medlem?</h6>
+							<p><label class="labels2" for="isMember">Jeg er medlem:</label><input type="checkBox" id="isMember" onclick="calcTotal()" /></p>
+						</div>
+						<div id="radioAcco">
+							<h6>Hvordan vil du bo?</h6>
+							<p class="centered">
+								<label for="optHotel">Hotell:</label><input type="radio" id="optHotel" name="optionAccommodation" onClick="doChange('Hotell')" />
+								<label class="needDistanceLeft" for="optApt">Leilighet:</label><input type="radio" id="optApt" name="optionAccommodation" onClick="doChange('Leilighet')" />
+							</p>
+						</div>
+					</div>
 
-					<fieldset name="orderdata">
-						<legend>Her kan du fullføre resten av ordren din</legend>
+					<h6>Når ønsker du å reise?</h6>
+					<!-- Choose departure date by writing the date into 3 seperate text boxes -->
+					<p><label class="labels" for="fromDay">Fra dato:</label>
+						<input type="text" id="fromDay" name="From_day_in_month" class="dates" value="dd" onfocus="this.select();" onchange="calcTotal()" />
+						<label for="fromMonth"></label><input type="text" id="fromMonth" name="From_month_in_year" class="dates" value="mm" onfocus="this.select();" onchange="calcTotal()" />
+						<label for="fromYear"></label><input type="text" id="fromYear" name="From_which_year" class="dates" value="åå" onfocus="this.select();" onchange="calcTotal()" />
+						<span class="infotext">Eksempel: 25. juli 2015 blir:</span>
+						<label for="staticDay"></label><input type="text" id="staticDay" class="dates" value="25" readonly />
+						<label for="staticMonth"></label><input type="text" id="staticMonth" class="dates" value="7" readonly />
+						<label for="staticYear"></label><input type="text" id="staticYear" class="dates" value="15" readonly />
+					</p><br/>
 
-						<div id="radioChoices">
-							<div id="checkMember">
-								<h6>Medlem?</h6>
-								<p><label class="labels2" for="isMember">Jeg er medlem:</label><input type="checkBox" id="isMember" onclick="calcTotal()" /></p>
+					<h6>Antall uker du ønsker å reise</h6>
+					<!-- Option to choose for how many weeks customer wants to stay. The drop down menu is populated
+						 with a javascript function, this way it easy to change the number of weeks, or even change it
+						 to number of days without needing to write loads of new code for the new options -->
+					<p><label class="labels2" for="howManyWeeks">Antall uker:</label>
+						<select id="howManyWeeks" class="choices" name="Travel_time_in_weeks" onchange="calcTotal()">
+							<!-- This scripts populates the pull down with the available number of weeks -->
+							<script type="text/javascript" src="javascript/length.js"></script>
+						</select>
+						<span class="infotext">Vi tilbyr reiser fra 1 til 4 uker.</span>
+					</p>
+
+					<div id="options">
+						<div id="extras">
+							<h6>Diverse</h6>
+							<!-- Extra options available for customers -->
+							<div id="wantWiFi">
+								<p><label class="labels2" for="wifi">Wi-Fi/ Internet:</label><input type="checkbox" id="wifi" name="WiFi_and_Internet" onclick="calcTotal()" /></p>
 							</div>
-							<div id="radioAcco">
-								<h6>Hvordan vil du bo?</h6>
-								<p class="centered">
-									<label for="optHotel">Hotell:</label><input type="radio" id="optHotel" name="optionAccommodation" onClick="doChange('Hotell')" />
-									<label class="needDistanceLeft" for="optApt">Leilighet:</label><input type="radio" id="optApt" name="optionAccommodation" onClick="doChange('Leilighet')" />
-								</p>
+							<div id="hotelFood">
+								<p><label class="labels2" for="food">Mat på hotellet:</label><input type="checkbox" id="food" name="Preorder_food_at_hotel" onclick="calcTotal()" /></p>
+							</div>
+							<div id="hotelAC">
+								<p><label class="labels2" for="hotAC">Aircondition:</label><input type="checkbox" id="hotAC" name="Hotel_Air_Condition" onclick="calcTotal()" /></p>
+							</div>
+							<div id="aptSwimming">
+								<p><label class="labels2" for="aptSwim">Svømmebasseng:</label><input type="checkbox" id="aptSwim" name="Apartment_with_swimmingpool" onclick="calcTotal()" /></p>
+							</div>
+							<div id="aptHouseKeeping">
+								<p><label class="labels2" for="housekeeping">Vask av leilighet:</label><input type="checkbox" id="housekeeping" name="Housekeeping_for_apartment" onclick="calcTotal()" /></p>
 							</div>
 						</div>
 
-						<h6>Når ønsker du å reise?</h6>
-						<!-- Choose departure date by writing the date into 3 seperate text boxes -->
-						<p><label class="labels" for="fromDay">Fra dato:</label>
-							<input type="text" id="fromDay" name="From_day_in_month" class="dates" value="dd" onfocus="this.select();" onchange="calcTotal()" />
-							<label for="fromMonth"></label><input type="text" id="fromMonth" name="From_month_in_year" class="dates" value="mm" onfocus="this.select();" onchange="calcTotal()" />
-							<label for="fromYear"></label><input type="text" id="fromYear" name="From_which_year" class="dates" value="åå" onfocus="this.select();" onchange="calcTotal()" />
-							<span class="infotext">Eksempel: 25. juli 2015 blir:</span>
-							<label for="staticDay"></label><input type="text" id="staticDay" class="dates" value="25" readonly />
-							<label for="staticMonth"></label><input type="text" id="staticMonth" class="dates" value="7" readonly />
-							<label for="staticYear"></label><input type="text" id="staticYear" class="dates" value="15" readonly />
-						</p><br/>
+						<div id="stuff">
+							<h6>Annet</h6>
 
-						<h6>Antall uker du ønsker å reise</h6>
-						<!-- Option to choose for how many weeks customer wants to stay. The drop down menu is populated
-						 	with a javascript function, this way it easy to change the number of weeks, or even change it
-						 	to number of days without needing to write loads of new code for the new options -->
-						<p><label class="labels2" for="howManyWeeks">Antall uker:</label>
-							<select id="howManyWeeks" class="choices" name="Travel_time_in_weeks" onchange="calcTotal()">
-								<!-- This scripts populates the pull down with the available number of weeks -->
-								<script type="text/javascript" src="javascript/length.js"></script>
-							</select>
-							<span class="infotext">Vi tilbyr reiser fra 1 til 4 uker.</span>
-						</p>
-
-						<div id="options">
-							<div id="extras">
-								<h6>Diverse</h6>
-								<!-- Extra options available for customers -->
-								<div id="wantWiFi">
-									<p><label class="labels2" for="wifi">Wi-Fi/ Internet:</label><input type="checkbox" id="wifi" name="WiFi_and_Internet" onclick="calcTotal()" /></p>
-								</div>
-								<div id="hotelFood">
-									<p><label class="labels2" for="food">Mat på hotellet:</label><input type="checkbox" id="food" name="Preorder_food_at_hotel" onclick="calcTotal()" /></p>
-								</div>
-								<div id="hotelAC">
-									<p><label class="labels2" for="hotAC">Aircondition:</label><input type="checkbox" id="hotAC" name="Hotel_Air_Condition" onclick="calcTotal()" /></p>
-								</div>
-								<div id="aptSwimming">
-									<p><label class="labels2" for="aptSwim">Svømmebasseng:</label><input type="checkbox" id="aptSwim" name="Apartment_with_swimmingpool" onclick="calcTotal()" /></p>
-								</div>
-								<div id="aptHouseKeeping">
-									<p><label class="labels2" for="housekeeping">Vask av leilighet:</label><input type="checkbox" id="housekeeping" name="Housekeeping_for_apartment" onclick="calcTotal()" /></p>
-								</div>
+							<!-- Size of the hotel room, not visible unless "Hotell" is chosen above -->
+							<div id="howMany">
+								<p><label class="labels2" for="rooms">Antall rom/ leiligheter:</label><input type="text" id="rooms" name="Number_of_rooms_or_apartments" class="dates" value="nn" onfocus="this.select();" onchange="calcTotal()" /></p>
 							</div>
 
-							<div id="stuff">
-								<h6>Annet</h6>
-
-								<!-- Size of the hotel room, not visible unless "Hotell" is chosen above -->
-								<div id="howMany">
-									<p><label class="labels2" for="rooms">Antall rom/ leiligheter:</label><input type="text" id="rooms" name="Number_of_rooms_or_apartments" class="dates" value="nn" onfocus="this.select();" onchange="calcTotal()" /></p>
-								</div>
-
-								<!-- Size of the hotel room, not visible unless "Hotell" is chosen above -->
-								<div id="chooseRoom">
-									<p><label class="labels3" for="roomSize">Romstørrelse:</label></p>
-									<select id="roomSize" class="choices" name="Type_of_hotel_room" onchange="calcTotal()">
-										<option>velg</option>
-										<option>Enkeltrom</option>
-										<option>Dobbeltrom</option>
-										<option>Suite</option>
-									</select>
-								</div>
-
+							<!-- Size of the hotel room, not visible unless "Hotell" is chosen above -->
+							<div id="chooseRoom">
+								<p><label class="labels3" for="roomSize">Romstørrelse:</label></p>
+								<select id="roomSize" class="choices" name="Type_of_hotel_room" onchange="calcTotal()">
+									<option>velg</option>
+									<option>Enkeltrom</option>
+									<option>Dobbeltrom</option>
+									<option>Suite</option>
+								</select>
 							</div>
+
 						</div>
-					</fieldset>
+					</div>
 				</div>
-
-				<div id="calculations">
+				<div id="calculations" class="panel">
 					<h1>Oversikt over din bestilling</h1>
 					<div id="totalPrice"></div>
 					<div id="buttons">
@@ -168,8 +163,8 @@
 					</div>
 				</div>
 			</form>
+			<div style="clear: both;"></div>
 		</div>
-		<div style="clear: both;"></div>
 	</div>
 	<!--	Footer div to contain an iframe for the footer menu -->
 	<div id="footer">
