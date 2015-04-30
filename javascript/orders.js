@@ -5,6 +5,7 @@ If so the calcTotal() script will start calculating the price
 function start() {
 	preselectItem(getElement("destination"));
 	preselectRadio(getElement("accommodation"));
+	doChange(getElement("accommodation"));
 	calcTotal();
 }
 
@@ -65,11 +66,8 @@ function preselectItem(destination) {
 
 
 function preselectRadio(accommodation) {
-	var hotel = document.getElementById("optHotell");
+	var hotel = document.getElementById("optHotel");
 	var apartment = document.getElementById("optApt");
-	alert(accommodation);
-	alert(hotel);
-	alert(apartment);
 	if (accommodation == "Hotell") {
 		hotel.checked = true;
 	}
@@ -79,7 +77,23 @@ function preselectRadio(accommodation) {
 	else document.getElementById("optHotel").checked = true;
 }
 
-
+function doChange(accommodation) {
+	if (accommodation == "Hotell") {
+		showOption('chooseRoom');
+		showOption('hotelFood');
+		showOption('hotelAC');
+		hideOption('aptHouseKeeping');
+		hideOption('aptSwimming');
+	}
+	else if (accommodation == "Leilighet") {
+		hideOption('chooseRoom');
+		hideOption('hotelFood');
+		hideOption('hotelAC');
+		showOption('aptSwimming');
+		showOption('aptHouseKeeping');
+	}
+	calcTotal();
+}
 
 /*
 Price calculating functions for the ordering form.
@@ -102,27 +116,12 @@ var ACPrice = 250;
 var swimPrice = 200;
 var washPrice = 500;
 
-function getSeason() {
-	season = 1;
-	// var inputDay = document.getElementById("fromDay").value;
-	var inputMonth = document.getElementById("fromMonth").value;
-	// var inputYear = document.getElementById("fromYear").value;
-	/*if (parseFloat(inputDay) == parseInt(inputDay) && !isNaN(inputDay)) {
-		var day = inputDay;
-	}*/
-	if (parseFloat(inputMonth) == parseInt(inputMonth) && !isNaN(inputMonth)) {
-		var month = inputMonth;
-	}
-	/*if (parseFloat(inputYear) == parseInt(inputYear) && !isNaN(inputYear)) {
-		var year = inputYear;
-	}*/
-	if (month <= 2 || month >= 11) {
-		season *= 0.7;
-	}
-	else if (month <= 4 || month >= 9) {
-		season *= 0.85;
-	}
-	return season;
+function membershipRebate() {
+	var rebate = 1;
+	var calcForm = document.forms["newOrder"];
+	var isMember = calcForm.elements["isMember"];
+	if (isMember.checked==true) { rebate = 0.8; }
+	return rebate;
 }
 
 function getDestinationPrice () {
@@ -137,12 +136,38 @@ function getDestinationPrice () {
 	return destPrice;
 }
 
-function membershipRebate() {
-	var rebate = 1;
-	var calcForm = document.forms["newOrder"];
-	var isMember = calcForm.elements["isMember"];
-	if (isMember.checked==true) { rebate = 0.8; }
-	return rebate;
+function getAccPrice() {
+	var accPrice=0;
+	var accRadio = document.getElementById("optApt").checked;
+	if(accRadio) {
+		accPrice = accomoAptPrice;
+
+	}
+	var accChoice = document.getElementById("roomSize").value;
+	if(!accRadio) {
+		for (i in accomodationPrices) {
+			if (i == accChoice) {
+				accPrice = accomodationPrices[i];
+				break;
+			}
+		}
+	}
+	return accPrice;
+}
+
+function getSeason() {
+	season = 1;
+	var inputMonth = document.getElementById("fromMonth").value;
+	if (parseFloat(inputMonth) == parseInt(inputMonth) && !isNaN(inputMonth)) {
+		var month = inputMonth;
+	}
+	if (month <= 2 || month >= 11) {
+		season *= 0.7;
+	}
+	else if (month <= 4 || month >= 9) {
+		season *= 0.85;
+	}
+	return season;
 }
 
 function getVacLength() {
@@ -156,24 +181,6 @@ function getRooms() {
 		people = input;
 	}
 	return people;
-}
-
-function getAccPrice() {
-	var accPrice=0;
-	var accRadio = document.getElementById("optApt").checked;
-	if(accRadio) {
-		accPrice = accomoAptPrice;
-	}
-	var accChoice = document.getElementById("roomSize").value;
-	if(!accRadio) {
-		for (i in accomodationPrices) {
-			if (i == accChoice) {
-				accPrice = accomodationPrices[i];
-				break;
-			}
-		}
-	}
-	return accPrice;
 }
 
 function getOptions() {
@@ -199,7 +206,7 @@ function calcTotal() {
 	var totalPrice = ((((getDestinationPrice() + getAccPrice() + getOptions()) * getVacLength()) * getRooms()) *getSeason()) * membershipRebate();
 	var divTotPrice = document.getElementById('totalPrice');
 	divTotPrice.style.display='block';
-	document.getElementById('totalPrice').innerHTML = "Reisen din vil koste kr " + totalPrice + ",-";
+	document.getElementById('totalPrice').innerHTML = "Reisen din vil koste kr <input type='text' id='travelCost' name='Turen_vil_koste' readonly value='" + totalPrice + ",-'></input>";
 }
 
 /*
@@ -221,17 +228,27 @@ order confirmation page.
 // hotellrom
 
 function checkStuff() {
+	var inputDest = document.getElementById("finalDest").value;
 	var inputDay = document.getElementById("fromDay").value;
 	var inputMonth = document.getElementById("fromMonth").value;
 	var inputYear = document.getElementById("fromYear").value;
 	var inputRooms = document.getElementById("rooms").value;
 	var inputHotel = document.getElementById("roomSize").value;
 	var validation = [];
+	validation["finalDest"]=false;
 	validation["fromDay"]=false;
 	validation["fromMonth"]=false;
 	validation["fromYear"]=false;
 	validation["rooms"]=false;
 	validation["roomSize"]=false;
+	if (document.getElementById("optApt").checked) {
+		document.getElementById("food").checked = false;
+		document.getElementById("hotAC").checked = false;
+	}
+	else if(document.getElementById("optHotel").checked) {
+		document.getElementById("aptSwim").checked = false;
+		document.getElementById("housekeeping").checked = false;
+	}
 	if (parseFloat(inputDay) == parseInt(inputDay) && !isNaN(inputDay)) {
 		var day = inputDay;
 	}
@@ -244,9 +261,9 @@ function checkStuff() {
 	if (parseFloat(inputRooms) == parseInt(inputRooms) && !isNaN(inputRooms)) {
 		var rooms = inputRooms;
 	}
-	/*if (parseFloat(rooms) == parseInt(inputRooms) && !isNaN(inputRooms)) {
-		var rooms = inputYear;
-	}*/
+	if (inputDest !== "velg") {
+		validation["finalDest"]=true;
+	}
 	if (day >= 1 && day <= 32) {
 		validation["fromDay"]=true;
 	}
@@ -259,7 +276,7 @@ function checkStuff() {
 	if (rooms >= 1 && rooms  <= 10) {
 		validation["rooms"]=true;
 	}
-	if (inputHotel !== "velg") {
+	if (inputHotel !== "velg" || document.getElementById("optApt").checked) {
 		validation["roomSize"]=true;
 	}
 	for (i in validation) {
