@@ -4,6 +4,7 @@
 	<link type="text/css" rel="stylesheet" href="css/layout.css"/>
 	<link type="text/css" rel="stylesheet" href="css/menu.css">
 	<link type="text/css" rel="stylesheet" href="css/forms.css"/>
+	<link type="text/css" rel="stylesheet" href="css/login.css">
 	<meta charset="UTF-8">
 	<!--	jQuery downloaded from google api's -->
 	<script src="javascript/jquery.min.js"></script>
@@ -58,8 +59,8 @@
 			<fieldset>
 				<legend>Logg inn med brukeren din</legend>
 				<form id="loginField">
-					<p><label class="labels" for="userName">Brukernavn:</label><input type="text" id="userName" name="Brukernavn" class="input"/><span class="infotext">Brukernavnet er din e-postadresse.</span></p>
-					<p><label class="labels" for="password">Passord:</label><input type="password" id="password" name="Passord" class="input"/></p>
+					<p><label class="labels" for="userName">Brukernavn:</label><input type="text" id="userName" name="Brukernavn" placeholder="Din e-post adresse" class="input"/><!--<span class="infotext">Brukernavnet er din e-postadresse.</span>--></p>
+					<p><label class="labels" for="password">Passord:</label><input type="password" id="password" name="Passord" placeholder="********" class="input"/></p>
 					<p class="centered">Har du ikke registrert deg? <a href="register.html" target="_new">Registrer deg her!</a></p>
 					<p class="centered">
 						<input class="button" type="submit" id="submit" value="Logg inn"/>
