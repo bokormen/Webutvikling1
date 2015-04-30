@@ -1,0 +1,22 @@
+#aboutWrapper {
+	width: 100%;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: darkslategrey;
+}
+
+#about {
+	position: absolute;
+	width: 150px;
+	font-weight: bold;
+}
+
+#about a {
+	text-decoration: none;
+	color: darkslategrey;
+}
+
+#socialAndRss {
+	position: absolute;
+	margin-left: 155px;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+	<channel>
+		<title>Sol og Varme</title>
+		<link>http://stud.aitel.hist.no/~oyvinklu/prosjekt/solOgVarmeRss.xml</link>
+		<description>Følg med på hvilke destinasjoner Sol og Varme kan tilby deg</description>
+		<item>
+			<title>Kypros</title>
+			<link>http://stud.aitel.hist.no/~oyvinklu/prosjekt/Kypros.html</link>
+			<description>Masse sol og varme</description>
+		</item>
+		<item>
+			<title>Ibiza</title>
+			<link>http://stud.aitel.hist.no/~oyvinklu/prosjekt/Ibiza.html</link>
+			<description>Masse sol og varme</description>
+		</item>
+		<item>
+			<title>Mallorca</title>
+			<link>http://stud.aitel.hist.no/~oyvinklu/prosjekt/Mallorca.html</link>
+			<description>Masse sol og varme</description>
+		</item>
+	</channel>
+
+</rss>
