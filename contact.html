@@ -24,8 +24,7 @@
 		</a>
 	</div>
 
-	<!--	The main menu. We dont have to change every page if we make
-			change to links. Therefore we put the menus in iframes -->
+	<!--	The main menu. see index.html for better commenting of this div -->
 	<div id="menu">
 		<div id="menuLineContent">
 			<div id="menuContent">
@@ -55,15 +54,21 @@
 
 	<!--	Page main content is displayed inside this div -->
 	<div id="content">
+		<!--div containing content and given a panel look and width-->
 		<div class="panel">
+			<!--form containing filds for sending a messange to Sol og Varme-->
 			<form id="contactForm" onsubmit="return validateForm()" action="http://www.aitel.hist.no/fag/ppi/prosjekt/behandle.php" method="post">
+				<!--textfield where return address is written-->
 				<label for="email"></label><input id="email" type="text" name="Din_e-post_adresse:" placeholder="Din e-post adresse">
 				<br />
+				<!--text area where message is written-->
 				<textarea rows="4" cols="50" id="comment" name="Kommentaren_din" form="contactForm" placeholder="Skriv din melding her..."></textarea>
 				<br />
+				<!--button to submit message-->
 				<input type="submit" value="Send">
 			</form>
 		</div>
+		<!--hack making floating divs take up space in the containing div-->
 		<div style="clear: both;"></div>
 	</div>
 
