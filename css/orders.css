@@ -81,6 +81,7 @@ All DIVs in this document are contained within the container DIV in layout.css
 	position: relative;
 	background-color: orange;
 	margin: 10px auto 10px;
+	text-align: center;
 }
 
 #buttons {

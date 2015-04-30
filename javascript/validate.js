@@ -81,3 +81,27 @@ function validateLogin() {
 	}
 	return true;
 }
+
+
+function validateForm() {
+	var user = document.getElementById("email").value;
+	var comment = document.getElementById("comment").value;
+	if (!user.match(/\S/)) {
+		alert("Du maa skrive inn din e-post adresse!");
+		return false;
+	}
+	if (!comment.match(/\S/)) {
+		alert("Du kan ikke sende inn en tom kommentar!!");
+		return false;
+	}
+	return true;
+}
+
+function checkSearch() {
+	var search = document.getElementById("searchString").value;
+	if (!search.match(/\S/)) {
+		// alert("Du må søke etter noe.");
+		return false;
+	}
+	return true;
+}

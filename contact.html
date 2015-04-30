@@ -9,6 +9,7 @@
 	<script src="javascript/jquery.min.js"></script>
 	<!-- Script to change logo opacity when mouse hovers over it -->
 	<script src="javascript/logo.js"></script>
+	<script src="javascript/validate.js"></script>
 	<title>Sol & Varme</title>
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 </head>
@@ -45,7 +46,7 @@
 			</div>
 			<div id="searchContent">
 				<form id="searchForm">
-					<input type="text" name="searchString" placeholder="Søk etter destinasjon her">
+					<input type="text" name="searchString" placeholder="Søk etter destinasjon her" >
 					<input type="submit" value="Søk" class="searchButton">
 				</form>
 			</div>
@@ -55,11 +56,11 @@
 	<!--	Page main content is displayed inside this div -->
 	<div id="content">
 		<div class="panel">
-			<form id="contactForm">
-				<input type="text" name="yourEmailAddress" placeholder="Din e-post adresse">
-				<br>
-				<textarea rows="4" cols="50" name="comment" form="contactForm">Skriv din melding her...</textarea>
-				<br>
+			<form id="contactForm" onsubmit="return validateForm()" action="http://www.aitel.hist.no/fag/ppi/prosjekt/behandle.php" method="post">
+				<label for="email"></label><input id="email" type="text" name="Din_e-post_adresse:" placeholder="Din e-post adresse">
+				<br />
+				<textarea rows="4" cols="50" id="comment" name="Kommentaren_din" form="contactForm" placeholder="Skriv din melding her..."></textarea>
+				<br />
 				<input type="submit" value="Send">
 			</form>
 		</div>
