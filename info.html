@@ -20,8 +20,30 @@
 		<!--	The main menu. We dont have to change every page if we make
 				change to links. Therefore we put the menues in iframes -->
 		<div id="menu">
-			<!--	Scrolling attribute set since css styling wont work with IE  -->
-			<iframe src="menu.html" class="iframes" scrolling="no"></iframe>
+			<div id="menuLineContent">
+				<div id="menuContent">
+					<nav>
+						<ul>
+							<li><a href="#">Destinasjoner</a>
+								<ul>
+									<li><a href="Malorca.html">Malorca</a></li>
+									<li><a href="Ibiza.html">Ibiza</a></li>
+									<li><a href="Kypros.html">Kypros</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Tilbud</a></li>
+							<li><a href="info.html">Reiseinfo</a></li>
+							<li><a href="login.html">Mine Sider</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div id="searchContent">
+					<form id="searchForm">
+						<input type="text" name="searchString" placeholder="Søk etter destinasjon her">
+						<input type="submit" value="Søk" class="searchButton">
+					</form>
+				</div>
+			</div>
 		</div>
 
 		<!--	Page main content is displayed inside this div -->
