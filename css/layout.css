@@ -14,7 +14,7 @@ html {
 	background-size: cover;
 }
 
-/*	Denne endrer du bare om du vil ha andre fonts Øyvind */
+/*	Setting standard fonts for the pages */
 body {
 	font-family: verdana, arial, sans-serif;
 	font-size: 13px;
@@ -53,15 +53,13 @@ body {
 	background-color: #FFFFFF;
 	padding: 5px; /* Some space from edge to content */
 	min-height: 500px;
-	/*height: 1500px;*/
-	/* Bare for å teste scrollinga, endre om du vil */
-	/*	The footer div, bottom of web page */
 }
 
+/* The footer of the page, a div that should contain a menu */
 #footer {
 	width: 100%;
-	background-color: orange; /* for testing */
-	height: 150px; /* Bare å endre */
+	background-color: orange;
+	height: 150px;
 	/* Slightly rounded corners at the bottom of the web page */
 	-webkit-border-radius: 0 0 7px 7px;
 	-moz-border-radius: 0 0 7px 7px;
@@ -87,14 +85,12 @@ body {
 	box-shadow: 2px 2px 2px #888888;
 }
 
+/* A class for the top logo image */
 img.logo {
 	border: none;
 }
 
-/* Dette må du bare endre på eller fjerne, men er vel kanskje mest naturlig å ha
-   annen styling av headerne i layouten og ikke hver enkelt css fil, evt. så får
-   spesialtilpassing av header layout skje i hver enkelt fil? */
-
+/* Setting all the standard headers so they are the same in every document */
 h1, h2, h3, h4, h5, h6 {
 	color: orange;
 	font-weight: bold;
@@ -102,26 +98,32 @@ h1, h2, h3, h4, h5, h6 {
 	text-shadow: 0 1px 1px black;
 }
 
+/* Header size */
 h1 {
 	font-size: 25px;
 }
 
+/* Header size */
 h2 {
 	font-size: 22px;
 }
 
+/* Header size */
 h3 {
 	font-size: 19px;
 }
 
+/* Header size */
 h4 {
 	font-size: 16px;
 }
 
+/* Header size */
 h5 {
 	font-size: 14px;
 }
 
+/* Header size, same as h5 but center aligned */
 h6 {
 	font-size: 14px;
 	text-align: center;
