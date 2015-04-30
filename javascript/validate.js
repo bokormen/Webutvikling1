@@ -78,7 +78,7 @@ function checkStuff() {
 	for (i in validation) {
 		if (validation[i] == false) {
 			window.document.forms["newOrder"][i].focus();
-			alert("Det markerte feltet må fylles inn");
+			alert("Det markerte feltet maa fylles inn");
 			return false;
 		}
 	}
