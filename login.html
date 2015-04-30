@@ -10,6 +10,7 @@
 	<script src="javascript/jquery.min.js"></script>
 	<!--	Script to change logo opacity when mouse hovers over it -->
 	<script src="javascript/logo.js"></script>
+	<script src="javascript/validate.js"></script>
 	<title>Sol & Varme</title>
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 </head>
@@ -56,18 +57,15 @@
 	<!--	Page main content is displayed inside this div -->
 	<div id="content">
 		<div class="panel">
-			<fieldset>
-				<legend>Logg inn med brukeren din</legend>
-				<form id="loginField">
-					<p><label class="labels" for="userName">Brukernavn:</label><input type="text" id="userName" name="Brukernavn" placeholder="Din e-post adresse" class="input"/><!--<span class="infotext">Brukernavnet er din e-postadresse.</span>--></p>
-					<p><label class="labels" for="password">Passord:</label><input type="password" id="password" name="Passord" placeholder="********" class="input"/></p>
-					<p class="centered">Har du ikke registrert deg? <a href="register.html" target="_new">Registrer deg her!</a></p>
-					<p class="centered">
-						<input class="button" type="submit" id="submit" value="Logg inn"/>
-						<input class="button" type="reset" id="reset" value="Nullstill"/>
-					</p>
-				</form>
-			</fieldset>
+			<form id="loginField" onsubmit="return validateLogin()" action="http://www.aitel.hist.no/fag/ppi/prosjekt/behandle.php" method="post">
+				<p><label class="labels" for="userName">Brukernavn:</label><input type="text" id="userName" name="Brukernavn" placeholder="Din e-post adresse" class="input"/><!--<span class="infotext">Brukernavnet er din e-postadresse.</span>--></p>
+				<p><label class="labels" for="password">Passord:</label><input type="password" id="password" name="Passord" placeholder="********" class="input"/></p>
+				<p class="centered">Har du ikke registrert deg? <a href="#">Registrer deg her!</a></p>
+				<p class="centered">
+					<input class="button" type="submit" id="submit" value="Logg inn"/>
+					<input class="button" type="reset" id="reset" value="Nullstill"/>
+				</p>
+			</form>
 		</div>
 		<div style="clear: both;"></div>
 	</div>

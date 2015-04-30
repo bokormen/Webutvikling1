@@ -8,6 +8,7 @@ All DIVs in this document are contained within the container DIV in layout.css
 	margin-left: 0.5%;
 	text-align: left;
 	float: left;
+	height: 300px;
 }
 
 /* Div that contains calculations based on choices made by the customer */
@@ -15,7 +16,7 @@ All DIVs in this document are contained within the container DIV in layout.css
 	border: 1px solid black; /* bare så jeg ser hvor stor den blir */
 	width: 47%;
 	text-align: left;
-	height: 400px;
+	height: 300px;
 	float: right;
 	margin-right: 0.5%;
 }

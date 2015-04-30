@@ -80,7 +80,6 @@ body {
 /*	class to create a panel looking div*/
 .panel {
 	margin-top: 10px;
-	/*background: gainsboro;*/
 	border-radius: 10px;
 	border: 1px solid lightslategrey;
 	padding: 10px;

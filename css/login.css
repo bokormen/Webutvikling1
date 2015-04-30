@@ -4,3 +4,6 @@
 	margin-right: auto;
 	text-align: left;
 }
+.panel a:hover {
+	color: orangered;
+}
