@@ -4,20 +4,20 @@ All DIVs in this document are contained within the container DIV in layout.css
 
 /* Div that contains the main part of the order-form */
 #orders {
-	width: 49%;
+	width: 47%;
+	margin-left: 0.5%;
 	text-align: left;
-	position: absolute;
+	float: left;
 }
 
 /* Div that contains calculations based on choices made by the customer */
 #calculations {
 	border: 1px solid black; /* bare så jeg ser hvor stor den blir */
-	width: 49%;
+	width: 47%;
 	text-align: left;
 	height: 400px;
-	position: absolute;
-	margin-top: 60;
-	margin-left: 600px;
+	float: right;
+	margin-right: 0.5%;
 }
 
 #radioChoices {
