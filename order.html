@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
+	<!-- importing the necessary style sheets -->
 	<link type="text/css" rel="stylesheet" href="css/layout.css"/>
 	<link type="text/css" rel="stylesheet" href="css/menu.css">
 	<link type="text/css" rel="stylesheet" href="css/orders.css"/>
 	<meta charset="UTF-8">
 	<!--	jQuery downloaded from google api's -->
 	<script src="javascript/jquery.min.js"></script>
-	<!--	Script to change logo opacity when mouse hovers over it -->
+	<!--	Script to change logo opacity when mouse hovers over it (jQuery) -->
 	<script src="javascript/logo.js"></script>
-	<!--	Scripts for the order page -->
+	<!--	Scripts for the order page, on the fly price calculations and manipulation of elements -->
 	<script src="javascript/orders.js"></script>
+	<!--	Script to validate form input so it wont get posted without the necessary data -->
 	<script src="javascript/validate.js"></script>
+	<!-- short jQuery script that loads some scripts as soon as the page is ready -->
+	<!-- the scripts loaded populate drop down based on url input and calculates travel price -->
 	<script type="text/javascript">
 		$(document).ready(function () {
 			start();
@@ -23,7 +27,6 @@
 <body>
 <!--	The wrapper to contain the page -->
 <div id="wrapper">
-
 	<!--	The header with the logo anchored to the front page -->
 	<div id="header">
 		<a href="index.html">
@@ -31,8 +34,7 @@
 		</a>
 	</div>
 
-	<!--	The main menu. We dont have to change every page if we make
-			change to links. Therefore we put the menus in iframes -->
+	<!-- Comments for the menu in index.html -->
 	<div id="menu">
 		<div id="menuLineContent">
 			<div id="menuContent">
@@ -52,6 +54,7 @@
 				</nav>
 			</div>
 			<div id="searchContent">
+				<!-- input in search box gets validated with a script, if its empty it wont start a search -->
 				<form id="searchForm" onsubmit="return checkSearch()" action="http://www.aitel.hist.no/fag/ppi/prosjekt/behandle.php" method="post">
 					<label for="searchString"></label><input id="searchString" type="text" name="You_searched_for" placeholder="Søk etter destinasjon her" />
 					<input type="submit" value="Søk" class="searchButton">
@@ -62,22 +65,31 @@
 
 	<!--	Page main content is displayed inside this div -->
 	<div id="content">
+		<!-- This div makes sure our background is large enough to show the page and fills it with a visible border -->
 		<div class="panel">
 			<h1>Her kan du bestille reisen din!</h1>
+			<!-- The main form of this page, wraps around several <div> tags. It starts in the left box -->
+			<!-- and ends in the right box after the visible buttons, when the submit button is clicked a javascipt will validate the form -->
+			<!-- and then if everything is OK the result will sent to a page that reads the content using POST -->
 			<form id="newOrder" onsubmit="return checkStuff()" action="http://www.aitel.hist.no/fag/ppi/prosjekt/behandle.php" method="post">
+				<!-- The main div visible to the left containing most of the form -->
 				<div id="orders" class="panel">
 					<h5 style="display:inline">Din valgte destinasjon er:</h5>
+					<!-- Pull down menu containing possible destinations, a script presets the pull down at page load -->
+					<!-- if destination is chosen at the destination pages, on change it calls upon a script that recalculates the travel price on the fly -->
 					<label for="finalDest"></label><select id="finalDest" class="choices" name="Travel_destination" onchange="calcTotal()">
 						<option>velg</option>
 						<option>Ibiza</option>
 						<option>Malorca</option>
 						<option>Kypros</option>
 					</select>
+					<!-- This div contains a checkbox that lets members tick it off for their membership rebate. -->
 					<div id="radioChoices">
 						<div id="checkMember">
 							<h6>Medlem?</h6>
 							<p><label class="labels2" for="isMember">Jeg er medlem:</label><input type="checkBox" id="isMember" onclick="calcTotal()" /></p>
 						</div>
+						<!-- DIV containing radiobuttons that enables choosing between hotel or apartment, calls upon script that recalculates the travel price -->
 						<div id="radioAcco">
 							<h6>Hvordan vil du bo?</h6>
 							<p class="centered">
@@ -88,12 +100,14 @@
 					</div>
 
 					<h6>Når ønsker du å reise?</h6>
-					<!-- Choose departure date by writing the date into 3 seperate text boxes -->
+					<!-- Choose departure date by writing the date into 3 seperate text boxes. javascripts recalculates travel price based upon season. -->
+					<!-- onfocus="this.select();" makes sure everything in the box gets selected when the box is clicked -->
 					<p><label class="labels" for="fromDay">Fra dato:</label>
 						<input type="text" id="fromDay" name="From_day_in_month" class="dates" value="dd" onfocus="this.select();" onchange="calcTotal()" />
 						<label for="fromMonth"></label><input type="text" id="fromMonth" name="From_month_in_year" class="dates" value="mm" onfocus="this.select();" onchange="calcTotal()" />
 						<label for="fromYear"></label><input type="text" id="fromYear" name="From_which_year" class="dates" value="åå" onfocus="this.select();" onchange="calcTotal()" />
 						<span class="infotext">Eksempel: 25. juli 2015 blir:</span>
+						<!-- These text boxes are only for the example and are therefore read only. -->
 						<label for="staticDay"></label><input type="text" id="staticDay" class="dates" value="25" readonly />
 						<label for="staticMonth"></label><input type="text" id="staticMonth" class="dates" value="7" readonly />
 						<label for="staticYear"></label><input type="text" id="staticYear" class="dates" value="15" readonly />
@@ -108,25 +122,33 @@
 							<!-- This scripts populates the pull down with the available number of weeks -->
 							<script type="text/javascript" src="javascript/length.js"></script>
 						</select>
+						<!-- Using span to add some formated text into the form -->
 						<span class="infotext">Vi tilbyr reiser fra 1 til 4 uker.</span>
 					</p>
 
+					<!-- This DIV contains extra options for the stay displayed in two other DIVs -->
 					<div id="options">
+						<!-- Inside this DIV we have some checkboxes for extra comfort options for the stay, price gets recalculated on the fly with javascript -->
 						<div id="extras">
 							<h6>Diverse</h6>
 							<!-- Extra options available for customers -->
+							<!-- First one is a checkbox for WiFi/ Internet access -->
 							<div id="wantWiFi">
 								<p><label class="labels2" for="wifi">Wi-Fi/ Internet:</label><input type="checkbox" id="wifi" name="WiFi_and_Internet" onclick="calcTotal()" /></p>
 							</div>
+							<!-- Option if you want meals at the hotel, gets hidden if apartments are chosen -->
 							<div id="hotelFood">
 								<p><label class="labels2" for="food">Mat på hotellet:</label><input type="checkbox" id="food" name="Preorder_food_at_hotel" onclick="calcTotal()" /></p>
 							</div>
+							<!-- Option for Air Condition on the hotel, gets hidden if apartments are chosen -->
 							<div id="hotelAC">
 								<p><label class="labels2" for="hotAC">Aircondition:</label><input type="checkbox" id="hotAC" name="Hotel_Air_Condition" onclick="calcTotal()" /></p>
 							</div>
+							<!-- Option for swimmingpool by the apartments, get hidden if hotel is chosen -->
 							<div id="aptSwimming">
 								<p><label class="labels2" for="aptSwim">Svømmebasseng:</label><input type="checkbox" id="aptSwim" name="Apartment_with_swimmingpool" onclick="calcTotal()" /></p>
 							</div>
+							<!-- Option if you want housekeeping for your apartment, implemented as housekeeping during the stay and not only at the end. Hidden if hotel is chosen-->
 							<div id="aptHouseKeeping">
 								<p><label class="labels2" for="housekeeping">Vask av leilighet:</label><input type="checkbox" id="housekeeping" name="Housekeeping_for_apartment" onclick="calcTotal()" /></p>
 							</div>
@@ -134,12 +156,10 @@
 
 						<div id="stuff">
 							<h6>Annet</h6>
-
 							<!-- Size of the hotel room, not visible unless "Hotell" is chosen above -->
 							<div id="howMany">
 								<p><label class="labels2" for="rooms">Antall rom/ leiligheter:</label><input type="text" id="rooms" name="Number_of_rooms_or_apartments" class="dates" value="nn" onfocus="this.select();" onchange="calcTotal()" /></p>
 							</div>
-
 							<!-- Size of the hotel room, not visible unless "Hotell" is chosen above -->
 							<div id="chooseRoom">
 								<p><label class="labels3" for="roomSize">Romstørrelse:</label></p>
@@ -154,9 +174,11 @@
 						</div>
 					</div>
 				</div>
+				<!-- The right-hand div containing price calculations and buttons -->
 				<div id="calculations" class="panel">
 					<h1>Oversikt over din bestilling</h1>
 					<div id="totalPrice"></div>
+					<!-- Submit and reset buttons -->
 					<div id="buttons">
 						<input class="button" type="submit" id="submit" value="Send inn"/>
 						<input class="button" type="reset" id="reset" value="Nullstill alt"/>

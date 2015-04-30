@@ -2,7 +2,7 @@
 All DIVs in this document are contained within the container DIV in layout.css
 */
 
-/* Div that contains the main part of the order-form */
+/* Div that contains the main part of the order-form, displayed on the left hand side of the page */
 #orders {
 	width: 47%;
 	margin-left: 0.5%;
@@ -11,9 +11,9 @@ All DIVs in this document are contained within the container DIV in layout.css
 	height: 300px;
 }
 
-/* Div that contains calculations based on choices made by the customer */
+/* Div that contains calculations based on choices made by the customer, displayed on the right hand side */
 #calculations {
-	border: 1px solid black; /* bare så jeg ser hvor stor den blir */
+	border: 1px solid black;
 	width: 47%;
 	text-align: left;
 	height: 300px;
@@ -21,19 +21,22 @@ All DIVs in this document are contained within the container DIV in layout.css
 	margin-right: 0.5%;
 }
 
+/* For the DIV that wraps the two DIVs containing membership checkbox and accommodation radioboxes */
 #radioChoices {
-	margin-top:		10px;
+	margin-top:	10px;
 	width: 580px;
 	height: 52px;
 	position: relative;
 }
 
+/* For the DIV that contains the membership checkbox */
 #checkMember {
 	width: 288px;
 	height: 50px;
 	position: absolute;
 }
 
+/* For the DIV wrapping the two radiobuttons for accommodations */
 #radioAcco {
 	width: 288px;
 	height: 50px;
@@ -41,6 +44,7 @@ All DIVs in this document are contained within the container DIV in layout.css
 	margin-left: 290px;
 }
 
+/* This DIV wraps around the two other DIVs containing extra choices at the bottom of the order form */
 #options {
 	margin-top: 10px;
 	width:			580px;
@@ -48,12 +52,14 @@ All DIVs in this document are contained within the container DIV in layout.css
 	position:		relative;
 }
 
+/* Container for the checkboxes in the bottom left corner */
 #extras {
 	width:			288px;
 	height:			100px;
 	position:		absolute;
 }
 
+/* Container for the options available in the bottom right of the order form */
 #stuff {
 	width:			288px;
 	position:		absolute;
@@ -61,22 +67,13 @@ All DIVs in this document are contained within the container DIV in layout.css
 	height: 100px;
 }
 
-#aptHouseKeeping, #aptSwimming {
-	display:		none;
+/* Common styling for all the checkboxes inside the #extras DIV */
+#aptHouseKeeping, #aptSwimming, #chooseRoom, #hotelFood, #hotelAC, #howMany {
 	width:			99%;
 	position:		relative;
 }
 
-#chooseRoom, #hotelFood, #hotelAC {
-	width:			99%;
-	position:		relative;
-}
-
-#howMany {
-	width: 99%;
-	position: relative;
-}
-
+/* Styling for the area that shows the total price the vacation */
 #totalPrice {
 	position: relative;
 	background-color: orange;
@@ -84,35 +81,35 @@ All DIVs in this document are contained within the container DIV in layout.css
 	text-align: center;
 }
 
+/* For the submit and reset buttons */
 #buttons {
 	position: relative;
 	margin: 10px auto 10px;
 	text-align: center;
 }
 
+/* For the pull down list containing the destinations */
 #finalDest {
 	margin-left: 10px;
 }
 
-fieldset {
-	float: none;
-	border: 1px solid black;
-	margin: 2px 2px 2px 2px;
-}
-
+/* Common styling for all paragraphs on this page */
 p {
 	margin-top: 7px;
 	margin-bottom: 7px;
 }
 
+/* class for centering paragraphs */
 p.centered {
 	text-align: center;
 }
 
+/* class used to get some distance on the left side, used between radio buttons */
 .needDistanceLeft {
 	margin-left: 20px;
 }
 
+/* These classes are for different labels */
 .labels {
 	width: 8em;
 	float: left;
@@ -120,6 +117,7 @@ p.centered {
 	margin-right: 0.5em;
 	display: block;}
 
+/* These classes are for different labels */
 .labels2 {
 	width: 15em;
 	float: left;
@@ -127,6 +125,7 @@ p.centered {
 	margin-right: 0.5em;
 	display: block;}
 
+/* These classes are for different labels */
 .labels3 {
 	width: 10.5em;
 	float: left;
@@ -134,29 +133,35 @@ p.centered {
 	margin-right: 0.5em;
 	display: block;}
 
+/* Class used to make sure textboxes are the same size */
 .input {
 	height: 20px;
 	width: 150px;
 }
 
+/* Small margin to the left of radiobuttons so the text label doesnt get too close */
 input[type="radio"] {
 	margin-left: 8px;
 }
 
+/* Used on the pull downs to for even height */
 .choices {
 	height: 20px;
 }
 
+/* For the textboxes where you enter the departure date */
 .dates {
 	width: 25px;
 	height: 15px;
 	text-align: center;
 }
 
+/* Mainly used on <span> tag to get some distance to the left */
 .infotext {
 	margin-left: 10px;
 }
 
+/* Styling for the two buttons */
 .button {
 	margin: 0 10px 0 10px;
 	height: 2em;
@@ -165,14 +170,17 @@ input[type="radio"] {
 	border: 1px solid black;
 }
 
+/* If you hover your mose over the buttons */
 .button:hover {
 	background: orangered;
 }
 
+/* Color when the buttons are clicked */
 .button:active {
 	background: red;
 }
 
+/* used only once in this document to center the h1 header */
 h1 {
 	text-align: center;;
 }
