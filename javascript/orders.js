@@ -203,7 +203,7 @@ function getOptions() {
 }
 
 function calcTotal() {
-	var totalPrice = ((((getDestinationPrice() + getAccPrice() + getOptions()) * getVacLength()) * getRooms()) *getSeason()) * membershipRebate();
+	var totalPrice = (((((getAccPrice() + getOptions()) * getVacLength()) * getRooms()) *getSeason()) + getDestinationPrice()) * membershipRebate();
 	var divTotPrice = document.getElementById('totalPrice');
 	divTotPrice.style.display='block';
 	document.getElementById('totalPrice').innerHTML = "Reisen din vil koste kr <input type='text' id='travelCost' name='Turen_vil_koste' readonly value='" + totalPrice + ",-'></input>";
