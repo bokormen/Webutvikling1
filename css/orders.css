@@ -73,6 +73,11 @@ All DIVs in this document are contained within the container DIV in layout.css
 	position:		relative;
 }
 
+/* These stay hidden as default if page is entered without destination chosen */
+#aptHouseKeeping, #aptSwimming {
+	display: none;
+}
+
 /* Styling for the area that shows the total price the vacation */
 #totalPrice {
 	position: relative;
