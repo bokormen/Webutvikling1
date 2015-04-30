@@ -4,6 +4,7 @@
 	<link type="text/css" rel="stylesheet" href="css/layout.css"/>
 	<link type="text/css" rel="stylesheet" href="css/menu.css">
 	<link type="text/css" rel="stylesheet" href="css/info.css"/>
+	<script src="javascript/validate.js"></script>
 	<meta charset="UTF-8">
 	<title>Sol & Varme</title>
 </head>
@@ -39,8 +40,8 @@
 				</nav>
 			</div>
 			<div id="searchContent">
-				<form id="searchForm">
-					<input type="text" name="searchString" placeholder="Søk etter destinasjon her">
+				<form id="searchForm" onsubmit="return checkSearch()" action="http://www.aitel.hist.no/fag/ppi/prosjekt/behandle.php" method="post">
+					<label for="searchString"></label><input id="searchString" type="text" name="You_searched_for" placeholder="Søk etter destinasjon her" />
 					<input type="submit" value="Søk" class="searchButton">
 				</form>
 			</div>

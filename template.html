@@ -8,6 +8,7 @@
 	<script src="javascript/jquery.min.js"></script>
 	<!-- Script to change logo opacity when mouse hovers over it -->
 	<script src="javascript/logo.js"></script>
+	<script src="javascript/validate.js"></script>
 	<title>Sol & Varme</title>
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 </head>
@@ -43,8 +44,8 @@
 					</nav>
 				</div>
 				<div id="searchContent">
-					<form id="searchForm">
-						<input type="text" name="searchString" placeholder="Søk etter destinasjon her">
+					<form id="searchForm" onsubmit="return checkSearch()" action="http://www.aitel.hist.no/fag/ppi/prosjekt/behandle.php" method="post">
+						<label for="searchString"></label><input id="searchString" type="text" name="You_searched_for" placeholder="Søk etter destinasjon her" />
 						<input type="submit" value="Søk" class="searchButton">
 					</form>
 				</div>
