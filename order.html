@@ -11,6 +11,11 @@
 	<script src="javascript/logo.js"></script>
 	<!--	Scripts for the order page -->
 	<script src="javascript/orders.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			start();
+		});
+	</script>
 	<title>Sol & Varme</title>
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 </head>
@@ -59,7 +64,8 @@
 		<h1>Her kan du bestille reisen din!</h1>
 			<form id="newOrder" onsubmit="return checkStuff()" action="http://www.aitel.hist.no/fag/ppi/prosjekt/behandle.php" method="post">
 			<div id="orders">
-				<h5 style="display:inline">Din valgte destinasjon er:</h5><select id="finalDest" class="choices" name="Travel_destination" onchange="calcTotal()">
+				<h5 style="display:inline">Din valgte destinasjon er:</h5>
+				<select id="finalDest" class="choices" name="Travel_destination" onchange="calcTotal()">
 					<option>velg</option>
 					<option>Ibiza</option>
 					<option>Malorca</option>

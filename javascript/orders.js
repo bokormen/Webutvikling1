@@ -2,8 +2,14 @@
 Run two functions on page load to check if destination is set.
 If so the calcTotal() script will start calculating the price
 */
-window.onload = function() { preselectItem(getElement("destination")) || preselectRadio(getElement("accommodation")) || calcTotal() };
+function start() {
+	preselectItem(getElement("destination"));
+	preselectRadio(getElement("accommodation"));
+	calcTotal();
+}
 
+
+//alert(getElement("accommodation"));
 /*
 Function to retrieve elements from URL substring
 We will use this to pre-fill some of the order form boxesS
@@ -44,7 +50,6 @@ function hideOption(hide){
 
 
 
-
 //
 function preselectItem(destination) {
 	var dropDown = document.getElementById("finalDest");
@@ -60,16 +65,24 @@ function preselectItem(destination) {
 
 
 function preselectRadio(accommodation) {
-	var buttons = document.getElementsByName("optionAccommodation");
+	var hotel = document.getElementById("optHotell");
+	var apartment = document.getElementById("optApt");
 	alert(accommodation);
+	alert(hotel);
+	alert(apartment);
+	if (accommodation == "Hotell") {
+		hotel.checked = true;
+	}
+	else if (accommodation == "Leilighet") {
+		apartment.checked = true;
+	}
+	else document.getElementById("optHotel").checked = true;
 }
 
 
 
 /*
-
 Price calculating functions for the ordering form.
-
 */
 
 var destinationPrices = [];
