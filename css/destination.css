@@ -1,29 +1,30 @@
+/*places this item to the left with some margin*/
 #leftPanel {
-	/*position: absolute;*/
 	float: left;
 	width: 700px;
 	margin-left: 33px;
 }
 
+/*places this item to the right with some margin*/
 #rightPanel {
-	/*margin-left: 766px;
-	position: absolute;*/
 	float: right;
 	margin-right: 34px;
 	width: 400px;
 }
 
+/*alligns the text to the left*/
 #description {
 	text-align: left;
 }
 
+/*places the picture to the left, and gives it some space on the right side, also sets the width of this picture*/
 #picture {
 	float: left;
 	width: 200px;
 	margin-right: 15px;
 }
 
-/*centers the TripAdvisor widget*/
+/*centers the TripAdvisor widgets in their panels*/
 #TA_cdsdmo27, #TA_cdsdmo422, #TA_cdsdmo684 {
 	width: 300px;
 	margin-left: auto;
