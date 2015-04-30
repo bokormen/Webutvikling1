@@ -1,3 +1,4 @@
+/*makes shure this div uses the space that is available and gives it some space on the sides, text in this div is colored grey*/
 #aboutWrapper {
 	width: 100%;
 	margin-left: 5px;
@@ -5,17 +6,20 @@
 	color: darkslategrey;
 }
 
+/*places this div to the left and gives ut width 150px and the text in this div is bold*/
 #about {
 	position: absolute;
 	width: 150px;
 	font-weight: bold;
 }
 
+/*links in #about is not "decorated" and is colored grey*/
 #about a {
 	text-decoration: none;
 	color: darkslategrey;
 }
 
+/*places this div next to #about*/
 #socialAndRss {
 	position: absolute;
 	margin-left: 155px;
